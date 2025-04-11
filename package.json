@@ -1,0 +1,15 @@
+{
+  "name": "sp-kintai-types",
+  "version": "0.1.0",
+  "main": "types/index.d.ts",
+  "files": [
+    "types"
+  ],
+  "scripts": {
+    "copy": "copy.bat",
+    "build": "tsc --declaration --emitDeclarationOnly"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.4.1"
+  }
+}
