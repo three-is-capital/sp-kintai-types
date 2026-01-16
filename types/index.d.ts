@@ -51,7 +51,8 @@ export namespace $Enums {
   Kekkin: 'Kekkin',
   Kyushoku: 'Kyushoku',
   Keicho: 'Keicho',
-  Ikukyu: 'Ikukyu'
+  Ikukyu: 'Ikukyu',
+  Kokyu: 'Kokyu'
 };
 
 export type HolidayType = (typeof HolidayType)[keyof typeof HolidayType]
@@ -1338,6 +1339,8 @@ export namespace Prisma {
     is_removed: boolean | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -1352,6 +1355,8 @@ export namespace Prisma {
     is_removed: boolean | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -1366,6 +1371,8 @@ export namespace Prisma {
     is_removed: number
     created_at: number
     updated_at: number
+    created_by: number
+    updated_by: number
     _all: number
   }
 
@@ -1392,6 +1399,8 @@ export namespace Prisma {
     is_removed?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -1406,6 +1415,8 @@ export namespace Prisma {
     is_removed?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -1420,6 +1431,8 @@ export namespace Prisma {
     is_removed?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
     _all?: true
   }
 
@@ -1516,11 +1529,13 @@ export namespace Prisma {
     enter_date: string
     quit_date: string | null
     work_day_per_week: number
-    file_id: string
+    file_id: string | null
     is_admin: boolean
     is_removed: boolean
     created_at: Date
     updated_at: Date
+    created_by: string | null
+    updated_by: string | null
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1554,6 +1569,8 @@ export namespace Prisma {
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
     managers?: boolean | User$managersArgs<ExtArgs>
     subordinates?: boolean | User$subordinatesArgs<ExtArgs>
     kintais?: boolean | User$kintaisArgs<ExtArgs>
@@ -1572,6 +1589,8 @@ export namespace Prisma {
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1586,6 +1605,8 @@ export namespace Prisma {
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -1600,9 +1621,11 @@ export namespace Prisma {
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "name" | "userNo" | "enter_date" | "quit_date" | "work_day_per_week" | "file_id" | "is_admin" | "is_removed" | "created_at" | "updated_at", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "name" | "userNo" | "enter_date" | "quit_date" | "work_day_per_week" | "file_id" | "is_admin" | "is_removed" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     managers?: boolean | User$managersArgs<ExtArgs>
     subordinates?: boolean | User$subordinatesArgs<ExtArgs>
@@ -1626,11 +1649,13 @@ export namespace Prisma {
       enter_date: string
       quit_date: string | null
       work_day_per_week: number
-      file_id: string
+      file_id: string | null
       is_admin: boolean
       is_removed: boolean
       created_at: Date
       updated_at: Date
+      created_by: string | null
+      updated_by: string | null
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -2068,6 +2093,8 @@ export namespace Prisma {
     readonly is_removed: FieldRef<"User", 'Boolean'>
     readonly created_at: FieldRef<"User", 'DateTime'>
     readonly updated_at: FieldRef<"User", 'DateTime'>
+    readonly created_by: FieldRef<"User", 'String'>
+    readonly updated_by: FieldRef<"User", 'String'>
   }
     
 
@@ -2561,6 +2588,8 @@ export namespace Prisma {
     managerEmail: string | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type UserManagerMaxAggregateOutputType = {
@@ -2568,6 +2597,8 @@ export namespace Prisma {
     managerEmail: string | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type UserManagerCountAggregateOutputType = {
@@ -2575,6 +2606,8 @@ export namespace Prisma {
     managerEmail: number
     created_at: number
     updated_at: number
+    created_by: number
+    updated_by: number
     _all: number
   }
 
@@ -2584,6 +2617,8 @@ export namespace Prisma {
     managerEmail?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type UserManagerMaxAggregateInputType = {
@@ -2591,6 +2626,8 @@ export namespace Prisma {
     managerEmail?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type UserManagerCountAggregateInputType = {
@@ -2598,6 +2635,8 @@ export namespace Prisma {
     managerEmail?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
     _all?: true
   }
 
@@ -2678,6 +2717,8 @@ export namespace Prisma {
     managerEmail: string
     created_at: Date
     updated_at: Date
+    created_by: string | null
+    updated_by: string | null
     _count: UserManagerCountAggregateOutputType | null
     _min: UserManagerMinAggregateOutputType | null
     _max: UserManagerMaxAggregateOutputType | null
@@ -2702,6 +2743,8 @@ export namespace Prisma {
     managerEmail?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     manager?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userManager"]>
@@ -2711,6 +2754,8 @@ export namespace Prisma {
     managerEmail?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     manager?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userManager"]>
@@ -2720,6 +2765,8 @@ export namespace Prisma {
     managerEmail?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     manager?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userManager"]>
@@ -2729,9 +2776,11 @@ export namespace Prisma {
     managerEmail?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }
 
-  export type UserManagerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userEmail" | "managerEmail" | "created_at" | "updated_at", ExtArgs["result"]["userManager"]>
+  export type UserManagerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userEmail" | "managerEmail" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["userManager"]>
   export type UserManagerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     manager?: boolean | UserDefaultArgs<ExtArgs>
@@ -2756,6 +2805,8 @@ export namespace Prisma {
       managerEmail: string
       created_at: Date
       updated_at: Date
+      created_by: string | null
+      updated_by: string | null
     }, ExtArgs["result"]["userManager"]>
     composites: {}
   }
@@ -3185,6 +3236,8 @@ export namespace Prisma {
     readonly managerEmail: FieldRef<"UserManager", 'String'>
     readonly created_at: FieldRef<"UserManager", 'DateTime'>
     readonly updated_at: FieldRef<"UserManager", 'DateTime'>
+    readonly created_by: FieldRef<"UserManager", 'String'>
+    readonly updated_by: FieldRef<"UserManager", 'String'>
   }
     
 
@@ -3616,6 +3669,8 @@ export namespace Prisma {
     memo: string | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type HolidaysMaxAggregateOutputType = {
@@ -3625,6 +3680,8 @@ export namespace Prisma {
     memo: string | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type HolidaysCountAggregateOutputType = {
@@ -3634,6 +3691,8 @@ export namespace Prisma {
     memo: number
     created_at: number
     updated_at: number
+    created_by: number
+    updated_by: number
     _all: number
   }
 
@@ -3645,6 +3704,8 @@ export namespace Prisma {
     memo?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type HolidaysMaxAggregateInputType = {
@@ -3654,6 +3715,8 @@ export namespace Prisma {
     memo?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type HolidaysCountAggregateInputType = {
@@ -3663,6 +3726,8 @@ export namespace Prisma {
     memo?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
     _all?: true
   }
 
@@ -3745,6 +3810,8 @@ export namespace Prisma {
     memo: string | null
     created_at: Date
     updated_at: Date
+    created_by: string | null
+    updated_by: string | null
     _count: HolidaysCountAggregateOutputType | null
     _min: HolidaysMinAggregateOutputType | null
     _max: HolidaysMaxAggregateOutputType | null
@@ -3771,6 +3838,8 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["holidays"]>
 
   export type HolidaysSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3780,6 +3849,8 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["holidays"]>
 
   export type HolidaysSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3789,6 +3860,8 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["holidays"]>
 
   export type HolidaysSelectScalar = {
@@ -3798,9 +3871,11 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }
 
-  export type HolidaysOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"date" | "day_of_week" | "name" | "memo" | "created_at" | "updated_at", ExtArgs["result"]["holidays"]>
+  export type HolidaysOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"date" | "day_of_week" | "name" | "memo" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["holidays"]>
 
   export type $HolidaysPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Holidays"
@@ -3812,6 +3887,8 @@ export namespace Prisma {
       memo: string | null
       created_at: Date
       updated_at: Date
+      created_by: string | null
+      updated_by: string | null
     }, ExtArgs["result"]["holidays"]>
     composites: {}
   }
@@ -4241,6 +4318,8 @@ export namespace Prisma {
     readonly memo: FieldRef<"Holidays", 'String'>
     readonly created_at: FieldRef<"Holidays", 'DateTime'>
     readonly updated_at: FieldRef<"Holidays", 'DateTime'>
+    readonly created_by: FieldRef<"Holidays", 'String'>
+    readonly updated_by: FieldRef<"Holidays", 'String'>
   }
     
 
@@ -4643,6 +4722,8 @@ export namespace Prisma {
     memo: string | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type KintaiMaxAggregateOutputType = {
@@ -4661,6 +4742,8 @@ export namespace Prisma {
     memo: string | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type KintaiCountAggregateOutputType = {
@@ -4679,6 +4762,8 @@ export namespace Prisma {
     memo: number
     created_at: number
     updated_at: number
+    created_by: number
+    updated_by: number
     _all: number
   }
 
@@ -4707,6 +4792,8 @@ export namespace Prisma {
     memo?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type KintaiMaxAggregateInputType = {
@@ -4725,6 +4812,8 @@ export namespace Prisma {
     memo?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type KintaiCountAggregateInputType = {
@@ -4743,6 +4832,8 @@ export namespace Prisma {
     memo?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
     _all?: true
   }
 
@@ -4848,6 +4939,8 @@ export namespace Prisma {
     memo: string | null
     created_at: Date
     updated_at: Date
+    created_by: string | null
+    updated_by: string | null
     _count: KintaiCountAggregateOutputType | null
     _avg: KintaiAvgAggregateOutputType | null
     _sum: KintaiSumAggregateOutputType | null
@@ -4885,6 +4978,8 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["kintai"]>
 
@@ -4904,6 +4999,8 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["kintai"]>
 
@@ -4923,6 +5020,8 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["kintai"]>
 
@@ -4942,9 +5041,11 @@ export namespace Prisma {
     memo?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }
 
-  export type KintaiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "date" | "type" | "is_holiday" | "paid_hours" | "start" | "end" | "break" | "work_hours" | "late_night_work_hours" | "ki" | "yyyymm" | "memo" | "created_at" | "updated_at", ExtArgs["result"]["kintai"]>
+  export type KintaiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "date" | "type" | "is_holiday" | "paid_hours" | "start" | "end" | "break" | "work_hours" | "late_night_work_hours" | "ki" | "yyyymm" | "memo" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["kintai"]>
   export type KintaiInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -4976,6 +5077,8 @@ export namespace Prisma {
       memo: string | null
       created_at: Date
       updated_at: Date
+      created_by: string | null
+      updated_by: string | null
     }, ExtArgs["result"]["kintai"]>
     composites: {}
   }
@@ -5415,6 +5518,8 @@ export namespace Prisma {
     readonly memo: FieldRef<"Kintai", 'String'>
     readonly created_at: FieldRef<"Kintai", 'DateTime'>
     readonly updated_at: FieldRef<"Kintai", 'DateTime'>
+    readonly created_by: FieldRef<"Kintai", 'String'>
+    readonly updated_by: FieldRef<"Kintai", 'String'>
   }
     
 
@@ -5917,6 +6022,8 @@ export namespace Prisma {
     month12: number | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type AnnualYukyuMaxAggregateOutputType = {
@@ -5947,6 +6054,8 @@ export namespace Prisma {
     month12: number | null
     created_at: Date | null
     updated_at: Date | null
+    created_by: string | null
+    updated_by: string | null
   }
 
   export type AnnualYukyuCountAggregateOutputType = {
@@ -5977,6 +6086,8 @@ export namespace Prisma {
     month12: number
     created_at: number
     updated_at: number
+    created_by: number
+    updated_by: number
     _all: number
   }
 
@@ -6057,6 +6168,8 @@ export namespace Prisma {
     month12?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type AnnualYukyuMaxAggregateInputType = {
@@ -6087,6 +6200,8 @@ export namespace Prisma {
     month12?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
   }
 
   export type AnnualYukyuCountAggregateInputType = {
@@ -6117,6 +6232,8 @@ export namespace Prisma {
     month12?: true
     created_at?: true
     updated_at?: true
+    created_by?: true
+    updated_by?: true
     _all?: true
   }
 
@@ -6234,6 +6351,8 @@ export namespace Prisma {
     month12: number
     created_at: Date
     updated_at: Date
+    created_by: string | null
+    updated_by: string | null
     _count: AnnualYukyuCountAggregateOutputType | null
     _avg: AnnualYukyuAvgAggregateOutputType | null
     _sum: AnnualYukyuSumAggregateOutputType | null
@@ -6283,6 +6402,8 @@ export namespace Prisma {
     month12?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["annualYukyu"]>
 
   export type AnnualYukyuSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -6313,6 +6434,8 @@ export namespace Prisma {
     month12?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["annualYukyu"]>
 
   export type AnnualYukyuSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -6343,6 +6466,8 @@ export namespace Prisma {
     month12?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }, ExtArgs["result"]["annualYukyu"]>
 
   export type AnnualYukyuSelectScalar = {
@@ -6373,9 +6498,11 @@ export namespace Prisma {
     month12?: boolean
     created_at?: boolean
     updated_at?: boolean
+    created_by?: boolean
+    updated_by?: boolean
   }
 
-  export type AnnualYukyuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "ki" | "standardDate" | "start" | "end" | "grantedOrigin" | "granted" | "totalUsed" | "prevPrevKurikoshi" | "prevKurikoshi" | "kurikoshiBeforeJiko" | "jiko" | "kurikoshi" | "month01" | "month02" | "month03" | "month04" | "month05" | "month06" | "month07" | "month08" | "month09" | "month10" | "month11" | "month12" | "created_at" | "updated_at", ExtArgs["result"]["annualYukyu"]>
+  export type AnnualYukyuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "ki" | "standardDate" | "start" | "end" | "grantedOrigin" | "granted" | "totalUsed" | "prevPrevKurikoshi" | "prevKurikoshi" | "kurikoshiBeforeJiko" | "jiko" | "kurikoshi" | "month01" | "month02" | "month03" | "month04" | "month05" | "month06" | "month07" | "month08" | "month09" | "month10" | "month11" | "month12" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["annualYukyu"]>
 
   export type $AnnualYukyuPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "AnnualYukyu"
@@ -6408,6 +6535,8 @@ export namespace Prisma {
       month12: number
       created_at: Date
       updated_at: Date
+      created_by: string | null
+      updated_by: string | null
     }, ExtArgs["result"]["annualYukyu"]>
     composites: {}
   }
@@ -6836,28 +6965,30 @@ export namespace Prisma {
     readonly standardDate: FieldRef<"AnnualYukyu", 'String'>
     readonly start: FieldRef<"AnnualYukyu", 'String'>
     readonly end: FieldRef<"AnnualYukyu", 'String'>
-    readonly grantedOrigin: FieldRef<"AnnualYukyu", 'Int'>
-    readonly granted: FieldRef<"AnnualYukyu", 'Int'>
-    readonly totalUsed: FieldRef<"AnnualYukyu", 'Int'>
-    readonly prevPrevKurikoshi: FieldRef<"AnnualYukyu", 'Int'>
-    readonly prevKurikoshi: FieldRef<"AnnualYukyu", 'Int'>
-    readonly kurikoshiBeforeJiko: FieldRef<"AnnualYukyu", 'Int'>
-    readonly jiko: FieldRef<"AnnualYukyu", 'Int'>
-    readonly kurikoshi: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month01: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month02: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month03: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month04: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month05: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month06: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month07: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month08: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month09: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month10: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month11: FieldRef<"AnnualYukyu", 'Int'>
-    readonly month12: FieldRef<"AnnualYukyu", 'Int'>
+    readonly grantedOrigin: FieldRef<"AnnualYukyu", 'Float'>
+    readonly granted: FieldRef<"AnnualYukyu", 'Float'>
+    readonly totalUsed: FieldRef<"AnnualYukyu", 'Float'>
+    readonly prevPrevKurikoshi: FieldRef<"AnnualYukyu", 'Float'>
+    readonly prevKurikoshi: FieldRef<"AnnualYukyu", 'Float'>
+    readonly kurikoshiBeforeJiko: FieldRef<"AnnualYukyu", 'Float'>
+    readonly jiko: FieldRef<"AnnualYukyu", 'Float'>
+    readonly kurikoshi: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month01: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month02: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month03: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month04: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month05: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month06: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month07: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month08: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month09: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month10: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month11: FieldRef<"AnnualYukyu", 'Float'>
+    readonly month12: FieldRef<"AnnualYukyu", 'Float'>
     readonly created_at: FieldRef<"AnnualYukyu", 'DateTime'>
     readonly updated_at: FieldRef<"AnnualYukyu", 'DateTime'>
+    readonly created_by: FieldRef<"AnnualYukyu", 'String'>
+    readonly updated_by: FieldRef<"AnnualYukyu", 'String'>
   }
     
 
@@ -7249,7 +7380,9 @@ export namespace Prisma {
     is_admin: 'is_admin',
     is_removed: 'is_removed',
     created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    created_by: 'created_by',
+    updated_by: 'updated_by'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -7259,7 +7392,9 @@ export namespace Prisma {
     userEmail: 'userEmail',
     managerEmail: 'managerEmail',
     created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    created_by: 'created_by',
+    updated_by: 'updated_by'
   };
 
   export type UserManagerScalarFieldEnum = (typeof UserManagerScalarFieldEnum)[keyof typeof UserManagerScalarFieldEnum]
@@ -7271,7 +7406,9 @@ export namespace Prisma {
     name: 'name',
     memo: 'memo',
     created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    created_by: 'created_by',
+    updated_by: 'updated_by'
   };
 
   export type HolidaysScalarFieldEnum = (typeof HolidaysScalarFieldEnum)[keyof typeof HolidaysScalarFieldEnum]
@@ -7292,7 +7429,9 @@ export namespace Prisma {
     yyyymm: 'yyyymm',
     memo: 'memo',
     created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    created_by: 'created_by',
+    updated_by: 'updated_by'
   };
 
   export type KintaiScalarFieldEnum = (typeof KintaiScalarFieldEnum)[keyof typeof KintaiScalarFieldEnum]
@@ -7325,7 +7464,9 @@ export namespace Prisma {
     month11: 'month11',
     month12: 'month12',
     created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    created_by: 'created_by',
+    updated_by: 'updated_by'
   };
 
   export type AnnualYukyuScalarFieldEnum = (typeof AnnualYukyuScalarFieldEnum)[keyof typeof AnnualYukyuScalarFieldEnum]
@@ -7450,11 +7591,13 @@ export namespace Prisma {
     enter_date?: StringFilter<"User"> | string
     quit_date?: StringNullableFilter<"User"> | string | null
     work_day_per_week?: IntFilter<"User"> | number
-    file_id?: StringFilter<"User"> | string
+    file_id?: StringNullableFilter<"User"> | string | null
     is_admin?: BoolFilter<"User"> | boolean
     is_removed?: BoolFilter<"User"> | boolean
     created_at?: DateTimeFilter<"User"> | Date | string
     updated_at?: DateTimeFilter<"User"> | Date | string
+    created_by?: StringNullableFilter<"User"> | string | null
+    updated_by?: StringNullableFilter<"User"> | string | null
     managers?: UserManagerListRelationFilter
     subordinates?: UserManagerListRelationFilter
     kintais?: KintaiListRelationFilter
@@ -7467,11 +7610,13 @@ export namespace Prisma {
     enter_date?: SortOrder
     quit_date?: SortOrderInput | SortOrder
     work_day_per_week?: SortOrder
-    file_id?: SortOrder
+    file_id?: SortOrderInput | SortOrder
     is_admin?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     managers?: UserManagerOrderByRelationAggregateInput
     subordinates?: UserManagerOrderByRelationAggregateInput
     kintais?: KintaiOrderByRelationAggregateInput
@@ -7480,7 +7625,6 @@ export namespace Prisma {
   export type UserWhereUniqueInput = Prisma.AtLeast<{
     email?: string
     userNo?: number
-    file_id?: string
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
@@ -7488,14 +7632,17 @@ export namespace Prisma {
     enter_date?: StringFilter<"User"> | string
     quit_date?: StringNullableFilter<"User"> | string | null
     work_day_per_week?: IntFilter<"User"> | number
+    file_id?: StringNullableFilter<"User"> | string | null
     is_admin?: BoolFilter<"User"> | boolean
     is_removed?: BoolFilter<"User"> | boolean
     created_at?: DateTimeFilter<"User"> | Date | string
     updated_at?: DateTimeFilter<"User"> | Date | string
+    created_by?: StringNullableFilter<"User"> | string | null
+    updated_by?: StringNullableFilter<"User"> | string | null
     managers?: UserManagerListRelationFilter
     subordinates?: UserManagerListRelationFilter
     kintais?: KintaiListRelationFilter
-  }, "email" | "userNo" | "file_id">
+  }, "email" | "userNo">
 
   export type UserOrderByWithAggregationInput = {
     email?: SortOrder
@@ -7504,11 +7651,13 @@ export namespace Prisma {
     enter_date?: SortOrder
     quit_date?: SortOrderInput | SortOrder
     work_day_per_week?: SortOrder
-    file_id?: SortOrder
+    file_id?: SortOrderInput | SortOrder
     is_admin?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -7526,11 +7675,13 @@ export namespace Prisma {
     enter_date?: StringWithAggregatesFilter<"User"> | string
     quit_date?: StringNullableWithAggregatesFilter<"User"> | string | null
     work_day_per_week?: IntWithAggregatesFilter<"User"> | number
-    file_id?: StringWithAggregatesFilter<"User"> | string
+    file_id?: StringNullableWithAggregatesFilter<"User"> | string | null
     is_admin?: BoolWithAggregatesFilter<"User"> | boolean
     is_removed?: BoolWithAggregatesFilter<"User"> | boolean
     created_at?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    created_by?: StringNullableWithAggregatesFilter<"User"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"User"> | string | null
   }
 
   export type UserManagerWhereInput = {
@@ -7541,6 +7692,8 @@ export namespace Prisma {
     managerEmail?: StringFilter<"UserManager"> | string
     created_at?: DateTimeFilter<"UserManager"> | Date | string
     updated_at?: DateTimeFilter<"UserManager"> | Date | string
+    created_by?: StringNullableFilter<"UserManager"> | string | null
+    updated_by?: StringNullableFilter<"UserManager"> | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     manager?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
@@ -7550,6 +7703,8 @@ export namespace Prisma {
     managerEmail?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     user?: UserOrderByWithRelationInput
     manager?: UserOrderByWithRelationInput
   }
@@ -7563,6 +7718,8 @@ export namespace Prisma {
     managerEmail?: StringFilter<"UserManager"> | string
     created_at?: DateTimeFilter<"UserManager"> | Date | string
     updated_at?: DateTimeFilter<"UserManager"> | Date | string
+    created_by?: StringNullableFilter<"UserManager"> | string | null
+    updated_by?: StringNullableFilter<"UserManager"> | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     manager?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "userEmail_managerEmail">
@@ -7572,6 +7729,8 @@ export namespace Prisma {
     managerEmail?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     _count?: UserManagerCountOrderByAggregateInput
     _max?: UserManagerMaxOrderByAggregateInput
     _min?: UserManagerMinOrderByAggregateInput
@@ -7585,6 +7744,8 @@ export namespace Prisma {
     managerEmail?: StringWithAggregatesFilter<"UserManager"> | string
     created_at?: DateTimeWithAggregatesFilter<"UserManager"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"UserManager"> | Date | string
+    created_by?: StringNullableWithAggregatesFilter<"UserManager"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"UserManager"> | string | null
   }
 
   export type HolidaysWhereInput = {
@@ -7597,6 +7758,8 @@ export namespace Prisma {
     memo?: StringNullableFilter<"Holidays"> | string | null
     created_at?: DateTimeFilter<"Holidays"> | Date | string
     updated_at?: DateTimeFilter<"Holidays"> | Date | string
+    created_by?: StringNullableFilter<"Holidays"> | string | null
+    updated_by?: StringNullableFilter<"Holidays"> | string | null
   }
 
   export type HolidaysOrderByWithRelationInput = {
@@ -7606,6 +7769,8 @@ export namespace Prisma {
     memo?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
   }
 
   export type HolidaysWhereUniqueInput = Prisma.AtLeast<{
@@ -7618,6 +7783,8 @@ export namespace Prisma {
     memo?: StringNullableFilter<"Holidays"> | string | null
     created_at?: DateTimeFilter<"Holidays"> | Date | string
     updated_at?: DateTimeFilter<"Holidays"> | Date | string
+    created_by?: StringNullableFilter<"Holidays"> | string | null
+    updated_by?: StringNullableFilter<"Holidays"> | string | null
   }, "date">
 
   export type HolidaysOrderByWithAggregationInput = {
@@ -7627,6 +7794,8 @@ export namespace Prisma {
     memo?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     _count?: HolidaysCountOrderByAggregateInput
     _max?: HolidaysMaxOrderByAggregateInput
     _min?: HolidaysMinOrderByAggregateInput
@@ -7642,6 +7811,8 @@ export namespace Prisma {
     memo?: StringNullableWithAggregatesFilter<"Holidays"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Holidays"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Holidays"> | Date | string
+    created_by?: StringNullableWithAggregatesFilter<"Holidays"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Holidays"> | string | null
   }
 
   export type KintaiWhereInput = {
@@ -7663,6 +7834,8 @@ export namespace Prisma {
     memo?: StringNullableFilter<"Kintai"> | string | null
     created_at?: DateTimeFilter<"Kintai"> | Date | string
     updated_at?: DateTimeFilter<"Kintai"> | Date | string
+    created_by?: StringNullableFilter<"Kintai"> | string | null
+    updated_by?: StringNullableFilter<"Kintai"> | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
@@ -7682,6 +7855,8 @@ export namespace Prisma {
     memo?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     user?: UserOrderByWithRelationInput
   }
 
@@ -7705,6 +7880,8 @@ export namespace Prisma {
     memo?: StringNullableFilter<"Kintai"> | string | null
     created_at?: DateTimeFilter<"Kintai"> | Date | string
     updated_at?: DateTimeFilter<"Kintai"> | Date | string
+    created_by?: StringNullableFilter<"Kintai"> | string | null
+    updated_by?: StringNullableFilter<"Kintai"> | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "email_date">
 
@@ -7724,6 +7901,8 @@ export namespace Prisma {
     memo?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     _count?: KintaiCountOrderByAggregateInput
     _avg?: KintaiAvgOrderByAggregateInput
     _max?: KintaiMaxOrderByAggregateInput
@@ -7750,6 +7929,8 @@ export namespace Prisma {
     memo?: StringNullableWithAggregatesFilter<"Kintai"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Kintai"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Kintai"> | Date | string
+    created_by?: StringNullableWithAggregatesFilter<"Kintai"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Kintai"> | string | null
   }
 
   export type AnnualYukyuWhereInput = {
@@ -7761,28 +7942,30 @@ export namespace Prisma {
     standardDate?: StringFilter<"AnnualYukyu"> | string
     start?: StringFilter<"AnnualYukyu"> | string
     end?: StringFilter<"AnnualYukyu"> | string
-    grantedOrigin?: IntFilter<"AnnualYukyu"> | number
-    granted?: IntFilter<"AnnualYukyu"> | number
-    totalUsed?: IntFilter<"AnnualYukyu"> | number
-    prevPrevKurikoshi?: IntFilter<"AnnualYukyu"> | number
-    prevKurikoshi?: IntFilter<"AnnualYukyu"> | number
-    kurikoshiBeforeJiko?: IntFilter<"AnnualYukyu"> | number
-    jiko?: IntFilter<"AnnualYukyu"> | number
-    kurikoshi?: IntFilter<"AnnualYukyu"> | number
-    month01?: IntFilter<"AnnualYukyu"> | number
-    month02?: IntFilter<"AnnualYukyu"> | number
-    month03?: IntFilter<"AnnualYukyu"> | number
-    month04?: IntFilter<"AnnualYukyu"> | number
-    month05?: IntFilter<"AnnualYukyu"> | number
-    month06?: IntFilter<"AnnualYukyu"> | number
-    month07?: IntFilter<"AnnualYukyu"> | number
-    month08?: IntFilter<"AnnualYukyu"> | number
-    month09?: IntFilter<"AnnualYukyu"> | number
-    month10?: IntFilter<"AnnualYukyu"> | number
-    month11?: IntFilter<"AnnualYukyu"> | number
-    month12?: IntFilter<"AnnualYukyu"> | number
+    grantedOrigin?: FloatFilter<"AnnualYukyu"> | number
+    granted?: FloatFilter<"AnnualYukyu"> | number
+    totalUsed?: FloatFilter<"AnnualYukyu"> | number
+    prevPrevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    prevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    kurikoshiBeforeJiko?: FloatFilter<"AnnualYukyu"> | number
+    jiko?: FloatFilter<"AnnualYukyu"> | number
+    kurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    month01?: FloatFilter<"AnnualYukyu"> | number
+    month02?: FloatFilter<"AnnualYukyu"> | number
+    month03?: FloatFilter<"AnnualYukyu"> | number
+    month04?: FloatFilter<"AnnualYukyu"> | number
+    month05?: FloatFilter<"AnnualYukyu"> | number
+    month06?: FloatFilter<"AnnualYukyu"> | number
+    month07?: FloatFilter<"AnnualYukyu"> | number
+    month08?: FloatFilter<"AnnualYukyu"> | number
+    month09?: FloatFilter<"AnnualYukyu"> | number
+    month10?: FloatFilter<"AnnualYukyu"> | number
+    month11?: FloatFilter<"AnnualYukyu"> | number
+    month12?: FloatFilter<"AnnualYukyu"> | number
     created_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
     updated_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
+    created_by?: StringNullableFilter<"AnnualYukyu"> | string | null
+    updated_by?: StringNullableFilter<"AnnualYukyu"> | string | null
   }
 
   export type AnnualYukyuOrderByWithRelationInput = {
@@ -7813,6 +7996,8 @@ export namespace Prisma {
     month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
   }
 
   export type AnnualYukyuWhereUniqueInput = Prisma.AtLeast<{
@@ -7825,28 +8010,30 @@ export namespace Prisma {
     standardDate?: StringFilter<"AnnualYukyu"> | string
     start?: StringFilter<"AnnualYukyu"> | string
     end?: StringFilter<"AnnualYukyu"> | string
-    grantedOrigin?: IntFilter<"AnnualYukyu"> | number
-    granted?: IntFilter<"AnnualYukyu"> | number
-    totalUsed?: IntFilter<"AnnualYukyu"> | number
-    prevPrevKurikoshi?: IntFilter<"AnnualYukyu"> | number
-    prevKurikoshi?: IntFilter<"AnnualYukyu"> | number
-    kurikoshiBeforeJiko?: IntFilter<"AnnualYukyu"> | number
-    jiko?: IntFilter<"AnnualYukyu"> | number
-    kurikoshi?: IntFilter<"AnnualYukyu"> | number
-    month01?: IntFilter<"AnnualYukyu"> | number
-    month02?: IntFilter<"AnnualYukyu"> | number
-    month03?: IntFilter<"AnnualYukyu"> | number
-    month04?: IntFilter<"AnnualYukyu"> | number
-    month05?: IntFilter<"AnnualYukyu"> | number
-    month06?: IntFilter<"AnnualYukyu"> | number
-    month07?: IntFilter<"AnnualYukyu"> | number
-    month08?: IntFilter<"AnnualYukyu"> | number
-    month09?: IntFilter<"AnnualYukyu"> | number
-    month10?: IntFilter<"AnnualYukyu"> | number
-    month11?: IntFilter<"AnnualYukyu"> | number
-    month12?: IntFilter<"AnnualYukyu"> | number
+    grantedOrigin?: FloatFilter<"AnnualYukyu"> | number
+    granted?: FloatFilter<"AnnualYukyu"> | number
+    totalUsed?: FloatFilter<"AnnualYukyu"> | number
+    prevPrevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    prevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    kurikoshiBeforeJiko?: FloatFilter<"AnnualYukyu"> | number
+    jiko?: FloatFilter<"AnnualYukyu"> | number
+    kurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    month01?: FloatFilter<"AnnualYukyu"> | number
+    month02?: FloatFilter<"AnnualYukyu"> | number
+    month03?: FloatFilter<"AnnualYukyu"> | number
+    month04?: FloatFilter<"AnnualYukyu"> | number
+    month05?: FloatFilter<"AnnualYukyu"> | number
+    month06?: FloatFilter<"AnnualYukyu"> | number
+    month07?: FloatFilter<"AnnualYukyu"> | number
+    month08?: FloatFilter<"AnnualYukyu"> | number
+    month09?: FloatFilter<"AnnualYukyu"> | number
+    month10?: FloatFilter<"AnnualYukyu"> | number
+    month11?: FloatFilter<"AnnualYukyu"> | number
+    month12?: FloatFilter<"AnnualYukyu"> | number
     created_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
     updated_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
+    created_by?: StringNullableFilter<"AnnualYukyu"> | string | null
+    updated_by?: StringNullableFilter<"AnnualYukyu"> | string | null
   }, "email_ki">
 
   export type AnnualYukyuOrderByWithAggregationInput = {
@@ -7877,6 +8064,8 @@ export namespace Prisma {
     month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     _count?: AnnualYukyuCountOrderByAggregateInput
     _avg?: AnnualYukyuAvgOrderByAggregateInput
     _max?: AnnualYukyuMaxOrderByAggregateInput
@@ -7893,28 +8082,30 @@ export namespace Prisma {
     standardDate?: StringWithAggregatesFilter<"AnnualYukyu"> | string
     start?: StringWithAggregatesFilter<"AnnualYukyu"> | string
     end?: StringWithAggregatesFilter<"AnnualYukyu"> | string
-    grantedOrigin?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    granted?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    totalUsed?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    prevPrevKurikoshi?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    prevKurikoshi?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    kurikoshiBeforeJiko?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    jiko?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    kurikoshi?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month01?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month02?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month03?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month04?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month05?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month06?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month07?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month08?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month09?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month10?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month11?: IntWithAggregatesFilter<"AnnualYukyu"> | number
-    month12?: IntWithAggregatesFilter<"AnnualYukyu"> | number
+    grantedOrigin?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    granted?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    totalUsed?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    prevPrevKurikoshi?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    prevKurikoshi?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    kurikoshiBeforeJiko?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    jiko?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    kurikoshi?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month01?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month02?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month03?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month04?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month05?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month06?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month07?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month08?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month09?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month10?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month11?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    month12?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     created_at?: DateTimeWithAggregatesFilter<"AnnualYukyu"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"AnnualYukyu"> | Date | string
+    created_by?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
   }
 
   export type UserCreateInput = {
@@ -7924,11 +8115,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     managers?: UserManagerCreateNestedManyWithoutUserInput
     subordinates?: UserManagerCreateNestedManyWithoutManagerInput
     kintais?: KintaiCreateNestedManyWithoutUserInput
@@ -7941,11 +8134,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     managers?: UserManagerUncheckedCreateNestedManyWithoutUserInput
     subordinates?: UserManagerUncheckedCreateNestedManyWithoutManagerInput
     kintais?: KintaiUncheckedCreateNestedManyWithoutUserInput
@@ -7957,11 +8152,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     managers?: UserManagerUpdateManyWithoutUserNestedInput
     subordinates?: UserManagerUpdateManyWithoutManagerNestedInput
     kintais?: KintaiUpdateManyWithoutUserNestedInput
@@ -7974,11 +8171,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     managers?: UserManagerUncheckedUpdateManyWithoutUserNestedInput
     subordinates?: UserManagerUncheckedUpdateManyWithoutManagerNestedInput
     kintais?: KintaiUncheckedUpdateManyWithoutUserNestedInput
@@ -7991,11 +8190,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type UserUpdateManyMutationInput = {
@@ -8004,11 +8205,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -8018,16 +8221,20 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserManagerCreateInput = {
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     user: UserCreateNestedOneWithoutManagersInput
     manager: UserCreateNestedOneWithoutSubordinatesInput
   }
@@ -8037,11 +8244,15 @@ export namespace Prisma {
     managerEmail: string
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type UserManagerUpdateInput = {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     user?: UserUpdateOneRequiredWithoutManagersNestedInput
     manager?: UserUpdateOneRequiredWithoutSubordinatesNestedInput
   }
@@ -8051,6 +8262,8 @@ export namespace Prisma {
     managerEmail?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserManagerCreateManyInput = {
@@ -8058,11 +8271,15 @@ export namespace Prisma {
     managerEmail: string
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type UserManagerUpdateManyMutationInput = {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserManagerUncheckedUpdateManyInput = {
@@ -8070,6 +8287,8 @@ export namespace Prisma {
     managerEmail?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type HolidaysCreateInput = {
@@ -8079,6 +8298,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type HolidaysUncheckedCreateInput = {
@@ -8088,6 +8309,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type HolidaysUpdateInput = {
@@ -8097,6 +8320,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type HolidaysUncheckedUpdateInput = {
@@ -8106,6 +8331,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type HolidaysCreateManyInput = {
@@ -8115,6 +8342,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type HolidaysUpdateManyMutationInput = {
@@ -8124,6 +8353,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type HolidaysUncheckedUpdateManyInput = {
@@ -8133,6 +8364,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type KintaiCreateInput = {
@@ -8150,6 +8383,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     user: UserCreateNestedOneWithoutKintaisInput
   }
 
@@ -8169,6 +8404,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type KintaiUpdateInput = {
@@ -8186,6 +8423,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     user?: UserUpdateOneRequiredWithoutKintaisNestedInput
   }
 
@@ -8205,6 +8444,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type KintaiCreateManyInput = {
@@ -8223,6 +8464,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type KintaiUpdateManyMutationInput = {
@@ -8240,6 +8483,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type KintaiUncheckedUpdateManyInput = {
@@ -8258,6 +8503,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type AnnualYukyuCreateInput = {
@@ -8288,6 +8535,8 @@ export namespace Prisma {
     month12?: number
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type AnnualYukyuUncheckedCreateInput = {
@@ -8318,6 +8567,8 @@ export namespace Prisma {
     month12?: number
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type AnnualYukyuUpdateInput = {
@@ -8326,28 +8577,30 @@ export namespace Prisma {
     standardDate?: StringFieldUpdateOperationsInput | string
     start?: StringFieldUpdateOperationsInput | string
     end?: StringFieldUpdateOperationsInput | string
-    grantedOrigin?: IntFieldUpdateOperationsInput | number
-    granted?: IntFieldUpdateOperationsInput | number
-    totalUsed?: IntFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: IntFieldUpdateOperationsInput | number
-    prevKurikoshi?: IntFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: IntFieldUpdateOperationsInput | number
-    jiko?: IntFieldUpdateOperationsInput | number
-    kurikoshi?: IntFieldUpdateOperationsInput | number
-    month01?: IntFieldUpdateOperationsInput | number
-    month02?: IntFieldUpdateOperationsInput | number
-    month03?: IntFieldUpdateOperationsInput | number
-    month04?: IntFieldUpdateOperationsInput | number
-    month05?: IntFieldUpdateOperationsInput | number
-    month06?: IntFieldUpdateOperationsInput | number
-    month07?: IntFieldUpdateOperationsInput | number
-    month08?: IntFieldUpdateOperationsInput | number
-    month09?: IntFieldUpdateOperationsInput | number
-    month10?: IntFieldUpdateOperationsInput | number
-    month11?: IntFieldUpdateOperationsInput | number
-    month12?: IntFieldUpdateOperationsInput | number
+    grantedOrigin?: FloatFieldUpdateOperationsInput | number
+    granted?: FloatFieldUpdateOperationsInput | number
+    totalUsed?: FloatFieldUpdateOperationsInput | number
+    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
+    jiko?: FloatFieldUpdateOperationsInput | number
+    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    month01?: FloatFieldUpdateOperationsInput | number
+    month02?: FloatFieldUpdateOperationsInput | number
+    month03?: FloatFieldUpdateOperationsInput | number
+    month04?: FloatFieldUpdateOperationsInput | number
+    month05?: FloatFieldUpdateOperationsInput | number
+    month06?: FloatFieldUpdateOperationsInput | number
+    month07?: FloatFieldUpdateOperationsInput | number
+    month08?: FloatFieldUpdateOperationsInput | number
+    month09?: FloatFieldUpdateOperationsInput | number
+    month10?: FloatFieldUpdateOperationsInput | number
+    month11?: FloatFieldUpdateOperationsInput | number
+    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type AnnualYukyuUncheckedUpdateInput = {
@@ -8356,28 +8609,30 @@ export namespace Prisma {
     standardDate?: StringFieldUpdateOperationsInput | string
     start?: StringFieldUpdateOperationsInput | string
     end?: StringFieldUpdateOperationsInput | string
-    grantedOrigin?: IntFieldUpdateOperationsInput | number
-    granted?: IntFieldUpdateOperationsInput | number
-    totalUsed?: IntFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: IntFieldUpdateOperationsInput | number
-    prevKurikoshi?: IntFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: IntFieldUpdateOperationsInput | number
-    jiko?: IntFieldUpdateOperationsInput | number
-    kurikoshi?: IntFieldUpdateOperationsInput | number
-    month01?: IntFieldUpdateOperationsInput | number
-    month02?: IntFieldUpdateOperationsInput | number
-    month03?: IntFieldUpdateOperationsInput | number
-    month04?: IntFieldUpdateOperationsInput | number
-    month05?: IntFieldUpdateOperationsInput | number
-    month06?: IntFieldUpdateOperationsInput | number
-    month07?: IntFieldUpdateOperationsInput | number
-    month08?: IntFieldUpdateOperationsInput | number
-    month09?: IntFieldUpdateOperationsInput | number
-    month10?: IntFieldUpdateOperationsInput | number
-    month11?: IntFieldUpdateOperationsInput | number
-    month12?: IntFieldUpdateOperationsInput | number
+    grantedOrigin?: FloatFieldUpdateOperationsInput | number
+    granted?: FloatFieldUpdateOperationsInput | number
+    totalUsed?: FloatFieldUpdateOperationsInput | number
+    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
+    jiko?: FloatFieldUpdateOperationsInput | number
+    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    month01?: FloatFieldUpdateOperationsInput | number
+    month02?: FloatFieldUpdateOperationsInput | number
+    month03?: FloatFieldUpdateOperationsInput | number
+    month04?: FloatFieldUpdateOperationsInput | number
+    month05?: FloatFieldUpdateOperationsInput | number
+    month06?: FloatFieldUpdateOperationsInput | number
+    month07?: FloatFieldUpdateOperationsInput | number
+    month08?: FloatFieldUpdateOperationsInput | number
+    month09?: FloatFieldUpdateOperationsInput | number
+    month10?: FloatFieldUpdateOperationsInput | number
+    month11?: FloatFieldUpdateOperationsInput | number
+    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type AnnualYukyuCreateManyInput = {
@@ -8408,6 +8663,8 @@ export namespace Prisma {
     month12?: number
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type AnnualYukyuUpdateManyMutationInput = {
@@ -8416,28 +8673,30 @@ export namespace Prisma {
     standardDate?: StringFieldUpdateOperationsInput | string
     start?: StringFieldUpdateOperationsInput | string
     end?: StringFieldUpdateOperationsInput | string
-    grantedOrigin?: IntFieldUpdateOperationsInput | number
-    granted?: IntFieldUpdateOperationsInput | number
-    totalUsed?: IntFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: IntFieldUpdateOperationsInput | number
-    prevKurikoshi?: IntFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: IntFieldUpdateOperationsInput | number
-    jiko?: IntFieldUpdateOperationsInput | number
-    kurikoshi?: IntFieldUpdateOperationsInput | number
-    month01?: IntFieldUpdateOperationsInput | number
-    month02?: IntFieldUpdateOperationsInput | number
-    month03?: IntFieldUpdateOperationsInput | number
-    month04?: IntFieldUpdateOperationsInput | number
-    month05?: IntFieldUpdateOperationsInput | number
-    month06?: IntFieldUpdateOperationsInput | number
-    month07?: IntFieldUpdateOperationsInput | number
-    month08?: IntFieldUpdateOperationsInput | number
-    month09?: IntFieldUpdateOperationsInput | number
-    month10?: IntFieldUpdateOperationsInput | number
-    month11?: IntFieldUpdateOperationsInput | number
-    month12?: IntFieldUpdateOperationsInput | number
+    grantedOrigin?: FloatFieldUpdateOperationsInput | number
+    granted?: FloatFieldUpdateOperationsInput | number
+    totalUsed?: FloatFieldUpdateOperationsInput | number
+    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
+    jiko?: FloatFieldUpdateOperationsInput | number
+    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    month01?: FloatFieldUpdateOperationsInput | number
+    month02?: FloatFieldUpdateOperationsInput | number
+    month03?: FloatFieldUpdateOperationsInput | number
+    month04?: FloatFieldUpdateOperationsInput | number
+    month05?: FloatFieldUpdateOperationsInput | number
+    month06?: FloatFieldUpdateOperationsInput | number
+    month07?: FloatFieldUpdateOperationsInput | number
+    month08?: FloatFieldUpdateOperationsInput | number
+    month09?: FloatFieldUpdateOperationsInput | number
+    month10?: FloatFieldUpdateOperationsInput | number
+    month11?: FloatFieldUpdateOperationsInput | number
+    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type AnnualYukyuUncheckedUpdateManyInput = {
@@ -8446,28 +8705,30 @@ export namespace Prisma {
     standardDate?: StringFieldUpdateOperationsInput | string
     start?: StringFieldUpdateOperationsInput | string
     end?: StringFieldUpdateOperationsInput | string
-    grantedOrigin?: IntFieldUpdateOperationsInput | number
-    granted?: IntFieldUpdateOperationsInput | number
-    totalUsed?: IntFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: IntFieldUpdateOperationsInput | number
-    prevKurikoshi?: IntFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: IntFieldUpdateOperationsInput | number
-    jiko?: IntFieldUpdateOperationsInput | number
-    kurikoshi?: IntFieldUpdateOperationsInput | number
-    month01?: IntFieldUpdateOperationsInput | number
-    month02?: IntFieldUpdateOperationsInput | number
-    month03?: IntFieldUpdateOperationsInput | number
-    month04?: IntFieldUpdateOperationsInput | number
-    month05?: IntFieldUpdateOperationsInput | number
-    month06?: IntFieldUpdateOperationsInput | number
-    month07?: IntFieldUpdateOperationsInput | number
-    month08?: IntFieldUpdateOperationsInput | number
-    month09?: IntFieldUpdateOperationsInput | number
-    month10?: IntFieldUpdateOperationsInput | number
-    month11?: IntFieldUpdateOperationsInput | number
-    month12?: IntFieldUpdateOperationsInput | number
+    grantedOrigin?: FloatFieldUpdateOperationsInput | number
+    granted?: FloatFieldUpdateOperationsInput | number
+    totalUsed?: FloatFieldUpdateOperationsInput | number
+    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
+    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
+    jiko?: FloatFieldUpdateOperationsInput | number
+    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    month01?: FloatFieldUpdateOperationsInput | number
+    month02?: FloatFieldUpdateOperationsInput | number
+    month03?: FloatFieldUpdateOperationsInput | number
+    month04?: FloatFieldUpdateOperationsInput | number
+    month05?: FloatFieldUpdateOperationsInput | number
+    month06?: FloatFieldUpdateOperationsInput | number
+    month07?: FloatFieldUpdateOperationsInput | number
+    month08?: FloatFieldUpdateOperationsInput | number
+    month09?: FloatFieldUpdateOperationsInput | number
+    month10?: FloatFieldUpdateOperationsInput | number
+    month11?: FloatFieldUpdateOperationsInput | number
+    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -8564,6 +8825,8 @@ export namespace Prisma {
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -8583,6 +8846,8 @@ export namespace Prisma {
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -8597,6 +8862,8 @@ export namespace Prisma {
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {
@@ -8693,6 +8960,8 @@ export namespace Prisma {
     managerEmail?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type UserManagerMaxOrderByAggregateInput = {
@@ -8700,6 +8969,8 @@ export namespace Prisma {
     managerEmail?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type UserManagerMinOrderByAggregateInput = {
@@ -8707,6 +8978,8 @@ export namespace Prisma {
     managerEmail?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type HolidaysCountOrderByAggregateInput = {
@@ -8716,6 +8989,8 @@ export namespace Prisma {
     memo?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type HolidaysMaxOrderByAggregateInput = {
@@ -8725,6 +9000,8 @@ export namespace Prisma {
     memo?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type HolidaysMinOrderByAggregateInput = {
@@ -8734,6 +9011,8 @@ export namespace Prisma {
     memo?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type EnumHolidayTypeNullableFilter<$PrismaModel = never> = {
@@ -8764,6 +9043,8 @@ export namespace Prisma {
     memo?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type KintaiAvgOrderByAggregateInput = {
@@ -8786,6 +9067,8 @@ export namespace Prisma {
     memo?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type KintaiMinOrderByAggregateInput = {
@@ -8804,6 +9087,8 @@ export namespace Prisma {
     memo?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type KintaiSumOrderByAggregateInput = {
@@ -8818,6 +9103,17 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedEnumHolidayTypeNullableFilter<$PrismaModel>
     _max?: NestedEnumHolidayTypeNullableFilter<$PrismaModel>
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type AnnualYukyuEmailKiCompoundUniqueInput = {
@@ -8853,6 +9149,8 @@ export namespace Prisma {
     month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type AnnualYukyuAvgOrderByAggregateInput = {
@@ -8907,6 +9205,8 @@ export namespace Prisma {
     month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type AnnualYukyuMinOrderByAggregateInput = {
@@ -8937,6 +9237,8 @@ export namespace Prisma {
     month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
   }
 
   export type AnnualYukyuSumOrderByAggregateInput = {
@@ -8961,6 +9263,22 @@ export namespace Prisma {
     month10?: SortOrder
     month11?: SortOrder
     month12?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type UserManagerCreateNestedManyWithoutUserInput = {
@@ -9159,6 +9477,14 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutKintaisInput, UserUpdateWithoutKintaisInput>, UserUncheckedUpdateWithoutKintaisInput>
   }
 
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -9325,9 +9651,27 @@ export namespace Prisma {
     _max?: NestedEnumHolidayTypeNullableFilter<$PrismaModel>
   }
 
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
   export type UserManagerCreateWithoutUserInput = {
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     manager: UserCreateNestedOneWithoutSubordinatesInput
   }
 
@@ -9335,6 +9679,8 @@ export namespace Prisma {
     managerEmail: string
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type UserManagerCreateOrConnectWithoutUserInput = {
@@ -9350,6 +9696,8 @@ export namespace Prisma {
   export type UserManagerCreateWithoutManagerInput = {
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     user: UserCreateNestedOneWithoutManagersInput
   }
 
@@ -9357,6 +9705,8 @@ export namespace Prisma {
     userEmail: string
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type UserManagerCreateOrConnectWithoutManagerInput = {
@@ -9384,6 +9734,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type KintaiUncheckedCreateWithoutUserInput = {
@@ -9401,6 +9753,8 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type KintaiCreateOrConnectWithoutUserInput = {
@@ -9437,6 +9791,8 @@ export namespace Prisma {
     managerEmail?: StringFilter<"UserManager"> | string
     created_at?: DateTimeFilter<"UserManager"> | Date | string
     updated_at?: DateTimeFilter<"UserManager"> | Date | string
+    created_by?: StringNullableFilter<"UserManager"> | string | null
+    updated_by?: StringNullableFilter<"UserManager"> | string | null
   }
 
   export type UserManagerUpsertWithWhereUniqueWithoutManagerInput = {
@@ -9490,6 +9846,8 @@ export namespace Prisma {
     memo?: StringNullableFilter<"Kintai"> | string | null
     created_at?: DateTimeFilter<"Kintai"> | Date | string
     updated_at?: DateTimeFilter<"Kintai"> | Date | string
+    created_by?: StringNullableFilter<"Kintai"> | string | null
+    updated_by?: StringNullableFilter<"Kintai"> | string | null
   }
 
   export type UserCreateWithoutManagersInput = {
@@ -9499,11 +9857,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     subordinates?: UserManagerCreateNestedManyWithoutManagerInput
     kintais?: KintaiCreateNestedManyWithoutUserInput
   }
@@ -9515,11 +9875,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     subordinates?: UserManagerUncheckedCreateNestedManyWithoutManagerInput
     kintais?: KintaiUncheckedCreateNestedManyWithoutUserInput
   }
@@ -9536,11 +9898,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     managers?: UserManagerCreateNestedManyWithoutUserInput
     kintais?: KintaiCreateNestedManyWithoutUserInput
   }
@@ -9552,11 +9916,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     managers?: UserManagerUncheckedCreateNestedManyWithoutUserInput
     kintais?: KintaiUncheckedCreateNestedManyWithoutUserInput
   }
@@ -9583,11 +9949,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     subordinates?: UserManagerUpdateManyWithoutManagerNestedInput
     kintais?: KintaiUpdateManyWithoutUserNestedInput
   }
@@ -9599,11 +9967,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     subordinates?: UserManagerUncheckedUpdateManyWithoutManagerNestedInput
     kintais?: KintaiUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -9625,11 +9995,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     managers?: UserManagerUpdateManyWithoutUserNestedInput
     kintais?: KintaiUpdateManyWithoutUserNestedInput
   }
@@ -9641,11 +10013,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     managers?: UserManagerUncheckedUpdateManyWithoutUserNestedInput
     kintais?: KintaiUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -9657,11 +10031,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     managers?: UserManagerCreateNestedManyWithoutUserInput
     subordinates?: UserManagerCreateNestedManyWithoutManagerInput
   }
@@ -9673,11 +10049,13 @@ export namespace Prisma {
     enter_date: string
     quit_date?: string | null
     work_day_per_week?: number
-    file_id: string
+    file_id?: string | null
     is_admin?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
     managers?: UserManagerUncheckedCreateNestedManyWithoutUserInput
     subordinates?: UserManagerUncheckedCreateNestedManyWithoutManagerInput
   }
@@ -9704,11 +10082,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     managers?: UserManagerUpdateManyWithoutUserNestedInput
     subordinates?: UserManagerUpdateManyWithoutManagerNestedInput
   }
@@ -9720,11 +10100,13 @@ export namespace Prisma {
     enter_date?: StringFieldUpdateOperationsInput | string
     quit_date?: NullableStringFieldUpdateOperationsInput | string | null
     work_day_per_week?: IntFieldUpdateOperationsInput | number
-    file_id?: StringFieldUpdateOperationsInput | string
+    file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     managers?: UserManagerUncheckedUpdateManyWithoutUserNestedInput
     subordinates?: UserManagerUncheckedUpdateManyWithoutManagerNestedInput
   }
@@ -9733,12 +10115,16 @@ export namespace Prisma {
     managerEmail: string
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type UserManagerCreateManyManagerInput = {
     userEmail: string
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type KintaiCreateManyUserInput = {
@@ -9756,11 +10142,15 @@ export namespace Prisma {
     memo?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    created_by?: string | null
+    updated_by?: string | null
   }
 
   export type UserManagerUpdateWithoutUserInput = {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     manager?: UserUpdateOneRequiredWithoutSubordinatesNestedInput
   }
 
@@ -9768,17 +10158,23 @@ export namespace Prisma {
     managerEmail?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserManagerUncheckedUpdateManyWithoutUserInput = {
     managerEmail?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserManagerUpdateWithoutManagerInput = {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     user?: UserUpdateOneRequiredWithoutManagersNestedInput
   }
 
@@ -9786,12 +10182,16 @@ export namespace Prisma {
     userEmail?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserManagerUncheckedUpdateManyWithoutManagerInput = {
     userEmail?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type KintaiUpdateWithoutUserInput = {
@@ -9809,6 +10209,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type KintaiUncheckedUpdateWithoutUserInput = {
@@ -9826,6 +10228,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type KintaiUncheckedUpdateManyWithoutUserInput = {
@@ -9843,6 +10247,8 @@ export namespace Prisma {
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
 
