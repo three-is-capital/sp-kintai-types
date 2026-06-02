@@ -29,6 +29,11 @@ export type UserManager = $Result.DefaultSelection<Prisma.$UserManagerPayload>
  */
 export type Holidays = $Result.DefaultSelection<Prisma.$HolidaysPayload>
 /**
+ * Model FiscalPeriod
+ * 
+ */
+export type FiscalPeriod = $Result.DefaultSelection<Prisma.$FiscalPeriodPayload>
+/**
  * Model Kintai
  * 
  */
@@ -52,7 +57,14 @@ export namespace $Enums {
   Kyushoku: 'Kyushoku',
   Keicho: 'Keicho',
   Ikukyu: 'Ikukyu',
-  Kokyu: 'Kokyu'
+  Kokyu: 'Kokyu',
+  Sanzen: 'Sanzen',
+  Sango: 'Sango',
+  KoNoKango: 'KoNoKango',
+  Kaigo: 'Kaigo',
+  KaigoLong: 'KaigoLong',
+  Saibanin: 'Saibanin',
+  Ryouyou: 'Ryouyou'
 };
 
 export type HolidayType = (typeof HolidayType)[keyof typeof HolidayType]
@@ -217,6 +229,16 @@ export class PrismaClient<
     * ```
     */
   get holidays(): Prisma.HolidaysDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.fiscalPeriod`: Exposes CRUD operations for the **FiscalPeriod** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FiscalPeriods
+    * const fiscalPeriods = await prisma.fiscalPeriod.findMany()
+    * ```
+    */
+  get fiscalPeriod(): Prisma.FiscalPeriodDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.kintai`: Exposes CRUD operations for the **Kintai** model.
@@ -680,6 +702,7 @@ export namespace Prisma {
     User: 'User',
     UserManager: 'UserManager',
     Holidays: 'Holidays',
+    FiscalPeriod: 'FiscalPeriod',
     Kintai: 'Kintai',
     AnnualYukyu: 'AnnualYukyu'
   };
@@ -700,7 +723,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "userManager" | "holidays" | "kintai" | "annualYukyu"
+      modelProps: "user" | "userManager" | "holidays" | "fiscalPeriod" | "kintai" | "annualYukyu"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -923,6 +946,80 @@ export namespace Prisma {
           count: {
             args: Prisma.HolidaysCountArgs<ExtArgs>
             result: $Utils.Optional<HolidaysCountAggregateOutputType> | number
+          }
+        }
+      }
+      FiscalPeriod: {
+        payload: Prisma.$FiscalPeriodPayload<ExtArgs>
+        fields: Prisma.FiscalPeriodFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FiscalPeriodFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FiscalPeriodFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>
+          }
+          findFirst: {
+            args: Prisma.FiscalPeriodFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FiscalPeriodFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>
+          }
+          findMany: {
+            args: Prisma.FiscalPeriodFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>[]
+          }
+          create: {
+            args: Prisma.FiscalPeriodCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>
+          }
+          createMany: {
+            args: Prisma.FiscalPeriodCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FiscalPeriodCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>[]
+          }
+          delete: {
+            args: Prisma.FiscalPeriodDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>
+          }
+          update: {
+            args: Prisma.FiscalPeriodUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>
+          }
+          deleteMany: {
+            args: Prisma.FiscalPeriodDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FiscalPeriodUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FiscalPeriodUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>[]
+          }
+          upsert: {
+            args: Prisma.FiscalPeriodUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FiscalPeriodPayload>
+          }
+          aggregate: {
+            args: Prisma.FiscalPeriodAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFiscalPeriod>
+          }
+          groupBy: {
+            args: Prisma.FiscalPeriodGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FiscalPeriodGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FiscalPeriodCountArgs<ExtArgs>
+            result: $Utils.Optional<FiscalPeriodCountAggregateOutputType> | number
           }
         }
       }
@@ -1161,6 +1258,7 @@ export namespace Prisma {
     user?: UserOmit
     userManager?: UserManagerOmit
     holidays?: HolidaysOmit
+    fiscalPeriod?: FiscalPeriodOmit
     kintai?: KintaiOmit
     annualYukyu?: AnnualYukyuOmit
   }
@@ -1336,6 +1434,7 @@ export namespace Prisma {
     work_day_per_week: number | null
     file_id: string | null
     is_admin: boolean | null
+    is_kintai_target: boolean | null
     is_removed: boolean | null
     created_at: Date | null
     updated_at: Date | null
@@ -1352,6 +1451,7 @@ export namespace Prisma {
     work_day_per_week: number | null
     file_id: string | null
     is_admin: boolean | null
+    is_kintai_target: boolean | null
     is_removed: boolean | null
     created_at: Date | null
     updated_at: Date | null
@@ -1368,6 +1468,7 @@ export namespace Prisma {
     work_day_per_week: number
     file_id: number
     is_admin: number
+    is_kintai_target: number
     is_removed: number
     created_at: number
     updated_at: number
@@ -1396,6 +1497,7 @@ export namespace Prisma {
     work_day_per_week?: true
     file_id?: true
     is_admin?: true
+    is_kintai_target?: true
     is_removed?: true
     created_at?: true
     updated_at?: true
@@ -1412,6 +1514,7 @@ export namespace Prisma {
     work_day_per_week?: true
     file_id?: true
     is_admin?: true
+    is_kintai_target?: true
     is_removed?: true
     created_at?: true
     updated_at?: true
@@ -1428,6 +1531,7 @@ export namespace Prisma {
     work_day_per_week?: true
     file_id?: true
     is_admin?: true
+    is_kintai_target?: true
     is_removed?: true
     created_at?: true
     updated_at?: true
@@ -1531,6 +1635,7 @@ export namespace Prisma {
     work_day_per_week: number
     file_id: string | null
     is_admin: boolean
+    is_kintai_target: boolean
     is_removed: boolean
     created_at: Date
     updated_at: Date
@@ -1566,6 +1671,7 @@ export namespace Prisma {
     work_day_per_week?: boolean
     file_id?: boolean
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1586,6 +1692,7 @@ export namespace Prisma {
     work_day_per_week?: boolean
     file_id?: boolean
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1602,6 +1709,7 @@ export namespace Prisma {
     work_day_per_week?: boolean
     file_id?: boolean
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1618,6 +1726,7 @@ export namespace Prisma {
     work_day_per_week?: boolean
     file_id?: boolean
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1625,7 +1734,7 @@ export namespace Prisma {
     updated_by?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "name" | "userNo" | "enter_date" | "quit_date" | "work_day_per_week" | "file_id" | "is_admin" | "is_removed" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "name" | "userNo" | "enter_date" | "quit_date" | "work_day_per_week" | "file_id" | "is_admin" | "is_kintai_target" | "is_removed" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     managers?: boolean | User$managersArgs<ExtArgs>
     subordinates?: boolean | User$subordinatesArgs<ExtArgs>
@@ -1651,6 +1760,7 @@ export namespace Prisma {
       work_day_per_week: number
       file_id: string | null
       is_admin: boolean
+      is_kintai_target: boolean
       is_removed: boolean
       created_at: Date
       updated_at: Date
@@ -2090,6 +2200,7 @@ export namespace Prisma {
     readonly work_day_per_week: FieldRef<"User", 'Int'>
     readonly file_id: FieldRef<"User", 'String'>
     readonly is_admin: FieldRef<"User", 'Boolean'>
+    readonly is_kintai_target: FieldRef<"User", 'Boolean'>
     readonly is_removed: FieldRef<"User", 'Boolean'>
     readonly created_at: FieldRef<"User", 'DateTime'>
     readonly updated_at: FieldRef<"User", 'DateTime'>
@@ -4687,6 +4798,1095 @@ export namespace Prisma {
 
 
   /**
+   * Model FiscalPeriod
+   */
+
+  export type AggregateFiscalPeriod = {
+    _count: FiscalPeriodCountAggregateOutputType | null
+    _avg: FiscalPeriodAvgAggregateOutputType | null
+    _sum: FiscalPeriodSumAggregateOutputType | null
+    _min: FiscalPeriodMinAggregateOutputType | null
+    _max: FiscalPeriodMaxAggregateOutputType | null
+  }
+
+  export type FiscalPeriodAvgAggregateOutputType = {
+    ki: number | null
+    fiscalStartMonth: number | null
+    monthCount: number | null
+  }
+
+  export type FiscalPeriodSumAggregateOutputType = {
+    ki: number | null
+    fiscalStartMonth: number | null
+    monthCount: number | null
+  }
+
+  export type FiscalPeriodMinAggregateOutputType = {
+    ki: number | null
+    startDate: string | null
+    endDate: string | null
+    grantDate: string | null
+    fiscalStartMonth: number | null
+    monthCount: number | null
+    isShortPeriod: boolean | null
+    created_at: Date | null
+    updated_at: Date | null
+  }
+
+  export type FiscalPeriodMaxAggregateOutputType = {
+    ki: number | null
+    startDate: string | null
+    endDate: string | null
+    grantDate: string | null
+    fiscalStartMonth: number | null
+    monthCount: number | null
+    isShortPeriod: boolean | null
+    created_at: Date | null
+    updated_at: Date | null
+  }
+
+  export type FiscalPeriodCountAggregateOutputType = {
+    ki: number
+    startDate: number
+    endDate: number
+    grantDate: number
+    fiscalStartMonth: number
+    monthCount: number
+    isShortPeriod: number
+    created_at: number
+    updated_at: number
+    _all: number
+  }
+
+
+  export type FiscalPeriodAvgAggregateInputType = {
+    ki?: true
+    fiscalStartMonth?: true
+    monthCount?: true
+  }
+
+  export type FiscalPeriodSumAggregateInputType = {
+    ki?: true
+    fiscalStartMonth?: true
+    monthCount?: true
+  }
+
+  export type FiscalPeriodMinAggregateInputType = {
+    ki?: true
+    startDate?: true
+    endDate?: true
+    grantDate?: true
+    fiscalStartMonth?: true
+    monthCount?: true
+    isShortPeriod?: true
+    created_at?: true
+    updated_at?: true
+  }
+
+  export type FiscalPeriodMaxAggregateInputType = {
+    ki?: true
+    startDate?: true
+    endDate?: true
+    grantDate?: true
+    fiscalStartMonth?: true
+    monthCount?: true
+    isShortPeriod?: true
+    created_at?: true
+    updated_at?: true
+  }
+
+  export type FiscalPeriodCountAggregateInputType = {
+    ki?: true
+    startDate?: true
+    endDate?: true
+    grantDate?: true
+    fiscalStartMonth?: true
+    monthCount?: true
+    isShortPeriod?: true
+    created_at?: true
+    updated_at?: true
+    _all?: true
+  }
+
+  export type FiscalPeriodAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FiscalPeriod to aggregate.
+     */
+    where?: FiscalPeriodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FiscalPeriods to fetch.
+     */
+    orderBy?: FiscalPeriodOrderByWithRelationInput | FiscalPeriodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FiscalPeriodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FiscalPeriods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FiscalPeriods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FiscalPeriods
+    **/
+    _count?: true | FiscalPeriodCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FiscalPeriodAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FiscalPeriodSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FiscalPeriodMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FiscalPeriodMaxAggregateInputType
+  }
+
+  export type GetFiscalPeriodAggregateType<T extends FiscalPeriodAggregateArgs> = {
+        [P in keyof T & keyof AggregateFiscalPeriod]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFiscalPeriod[P]>
+      : GetScalarType<T[P], AggregateFiscalPeriod[P]>
+  }
+
+
+
+
+  export type FiscalPeriodGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FiscalPeriodWhereInput
+    orderBy?: FiscalPeriodOrderByWithAggregationInput | FiscalPeriodOrderByWithAggregationInput[]
+    by: FiscalPeriodScalarFieldEnum[] | FiscalPeriodScalarFieldEnum
+    having?: FiscalPeriodScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FiscalPeriodCountAggregateInputType | true
+    _avg?: FiscalPeriodAvgAggregateInputType
+    _sum?: FiscalPeriodSumAggregateInputType
+    _min?: FiscalPeriodMinAggregateInputType
+    _max?: FiscalPeriodMaxAggregateInputType
+  }
+
+  export type FiscalPeriodGroupByOutputType = {
+    ki: number
+    startDate: string
+    endDate: string
+    grantDate: string
+    fiscalStartMonth: number
+    monthCount: number
+    isShortPeriod: boolean
+    created_at: Date
+    updated_at: Date
+    _count: FiscalPeriodCountAggregateOutputType | null
+    _avg: FiscalPeriodAvgAggregateOutputType | null
+    _sum: FiscalPeriodSumAggregateOutputType | null
+    _min: FiscalPeriodMinAggregateOutputType | null
+    _max: FiscalPeriodMaxAggregateOutputType | null
+  }
+
+  type GetFiscalPeriodGroupByPayload<T extends FiscalPeriodGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FiscalPeriodGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FiscalPeriodGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FiscalPeriodGroupByOutputType[P]>
+            : GetScalarType<T[P], FiscalPeriodGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FiscalPeriodSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ki?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    grantDate?: boolean
+    fiscalStartMonth?: boolean
+    monthCount?: boolean
+    isShortPeriod?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+  }, ExtArgs["result"]["fiscalPeriod"]>
+
+  export type FiscalPeriodSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ki?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    grantDate?: boolean
+    fiscalStartMonth?: boolean
+    monthCount?: boolean
+    isShortPeriod?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+  }, ExtArgs["result"]["fiscalPeriod"]>
+
+  export type FiscalPeriodSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ki?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    grantDate?: boolean
+    fiscalStartMonth?: boolean
+    monthCount?: boolean
+    isShortPeriod?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+  }, ExtArgs["result"]["fiscalPeriod"]>
+
+  export type FiscalPeriodSelectScalar = {
+    ki?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    grantDate?: boolean
+    fiscalStartMonth?: boolean
+    monthCount?: boolean
+    isShortPeriod?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+  }
+
+  export type FiscalPeriodOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"ki" | "startDate" | "endDate" | "grantDate" | "fiscalStartMonth" | "monthCount" | "isShortPeriod" | "created_at" | "updated_at", ExtArgs["result"]["fiscalPeriod"]>
+
+  export type $FiscalPeriodPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FiscalPeriod"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      ki: number
+      startDate: string
+      endDate: string
+      grantDate: string
+      fiscalStartMonth: number
+      monthCount: number
+      isShortPeriod: boolean
+      created_at: Date
+      updated_at: Date
+    }, ExtArgs["result"]["fiscalPeriod"]>
+    composites: {}
+  }
+
+  type FiscalPeriodGetPayload<S extends boolean | null | undefined | FiscalPeriodDefaultArgs> = $Result.GetResult<Prisma.$FiscalPeriodPayload, S>
+
+  type FiscalPeriodCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FiscalPeriodFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FiscalPeriodCountAggregateInputType | true
+    }
+
+  export interface FiscalPeriodDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FiscalPeriod'], meta: { name: 'FiscalPeriod' } }
+    /**
+     * Find zero or one FiscalPeriod that matches the filter.
+     * @param {FiscalPeriodFindUniqueArgs} args - Arguments to find a FiscalPeriod
+     * @example
+     * // Get one FiscalPeriod
+     * const fiscalPeriod = await prisma.fiscalPeriod.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FiscalPeriodFindUniqueArgs>(args: SelectSubset<T, FiscalPeriodFindUniqueArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FiscalPeriod that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FiscalPeriodFindUniqueOrThrowArgs} args - Arguments to find a FiscalPeriod
+     * @example
+     * // Get one FiscalPeriod
+     * const fiscalPeriod = await prisma.fiscalPeriod.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FiscalPeriodFindUniqueOrThrowArgs>(args: SelectSubset<T, FiscalPeriodFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FiscalPeriod that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FiscalPeriodFindFirstArgs} args - Arguments to find a FiscalPeriod
+     * @example
+     * // Get one FiscalPeriod
+     * const fiscalPeriod = await prisma.fiscalPeriod.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FiscalPeriodFindFirstArgs>(args?: SelectSubset<T, FiscalPeriodFindFirstArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FiscalPeriod that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FiscalPeriodFindFirstOrThrowArgs} args - Arguments to find a FiscalPeriod
+     * @example
+     * // Get one FiscalPeriod
+     * const fiscalPeriod = await prisma.fiscalPeriod.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FiscalPeriodFindFirstOrThrowArgs>(args?: SelectSubset<T, FiscalPeriodFindFirstOrThrowArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FiscalPeriods that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FiscalPeriodFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FiscalPeriods
+     * const fiscalPeriods = await prisma.fiscalPeriod.findMany()
+     * 
+     * // Get first 10 FiscalPeriods
+     * const fiscalPeriods = await prisma.fiscalPeriod.findMany({ take: 10 })
+     * 
+     * // Only select the `ki`
+     * const fiscalPeriodWithKiOnly = await prisma.fiscalPeriod.findMany({ select: { ki: true } })
+     * 
+     */
+    findMany<T extends FiscalPeriodFindManyArgs>(args?: SelectSubset<T, FiscalPeriodFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FiscalPeriod.
+     * @param {FiscalPeriodCreateArgs} args - Arguments to create a FiscalPeriod.
+     * @example
+     * // Create one FiscalPeriod
+     * const FiscalPeriod = await prisma.fiscalPeriod.create({
+     *   data: {
+     *     // ... data to create a FiscalPeriod
+     *   }
+     * })
+     * 
+     */
+    create<T extends FiscalPeriodCreateArgs>(args: SelectSubset<T, FiscalPeriodCreateArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FiscalPeriods.
+     * @param {FiscalPeriodCreateManyArgs} args - Arguments to create many FiscalPeriods.
+     * @example
+     * // Create many FiscalPeriods
+     * const fiscalPeriod = await prisma.fiscalPeriod.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FiscalPeriodCreateManyArgs>(args?: SelectSubset<T, FiscalPeriodCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FiscalPeriods and returns the data saved in the database.
+     * @param {FiscalPeriodCreateManyAndReturnArgs} args - Arguments to create many FiscalPeriods.
+     * @example
+     * // Create many FiscalPeriods
+     * const fiscalPeriod = await prisma.fiscalPeriod.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FiscalPeriods and only return the `ki`
+     * const fiscalPeriodWithKiOnly = await prisma.fiscalPeriod.createManyAndReturn({
+     *   select: { ki: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FiscalPeriodCreateManyAndReturnArgs>(args?: SelectSubset<T, FiscalPeriodCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FiscalPeriod.
+     * @param {FiscalPeriodDeleteArgs} args - Arguments to delete one FiscalPeriod.
+     * @example
+     * // Delete one FiscalPeriod
+     * const FiscalPeriod = await prisma.fiscalPeriod.delete({
+     *   where: {
+     *     // ... filter to delete one FiscalPeriod
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FiscalPeriodDeleteArgs>(args: SelectSubset<T, FiscalPeriodDeleteArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FiscalPeriod.
+     * @param {FiscalPeriodUpdateArgs} args - Arguments to update one FiscalPeriod.
+     * @example
+     * // Update one FiscalPeriod
+     * const fiscalPeriod = await prisma.fiscalPeriod.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FiscalPeriodUpdateArgs>(args: SelectSubset<T, FiscalPeriodUpdateArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FiscalPeriods.
+     * @param {FiscalPeriodDeleteManyArgs} args - Arguments to filter FiscalPeriods to delete.
+     * @example
+     * // Delete a few FiscalPeriods
+     * const { count } = await prisma.fiscalPeriod.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FiscalPeriodDeleteManyArgs>(args?: SelectSubset<T, FiscalPeriodDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FiscalPeriods.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FiscalPeriodUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FiscalPeriods
+     * const fiscalPeriod = await prisma.fiscalPeriod.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FiscalPeriodUpdateManyArgs>(args: SelectSubset<T, FiscalPeriodUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FiscalPeriods and returns the data updated in the database.
+     * @param {FiscalPeriodUpdateManyAndReturnArgs} args - Arguments to update many FiscalPeriods.
+     * @example
+     * // Update many FiscalPeriods
+     * const fiscalPeriod = await prisma.fiscalPeriod.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FiscalPeriods and only return the `ki`
+     * const fiscalPeriodWithKiOnly = await prisma.fiscalPeriod.updateManyAndReturn({
+     *   select: { ki: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FiscalPeriodUpdateManyAndReturnArgs>(args: SelectSubset<T, FiscalPeriodUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FiscalPeriod.
+     * @param {FiscalPeriodUpsertArgs} args - Arguments to update or create a FiscalPeriod.
+     * @example
+     * // Update or create a FiscalPeriod
+     * const fiscalPeriod = await prisma.fiscalPeriod.upsert({
+     *   create: {
+     *     // ... data to create a FiscalPeriod
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FiscalPeriod we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FiscalPeriodUpsertArgs>(args: SelectSubset<T, FiscalPeriodUpsertArgs<ExtArgs>>): Prisma__FiscalPeriodClient<$Result.GetResult<Prisma.$FiscalPeriodPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FiscalPeriods.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FiscalPeriodCountArgs} args - Arguments to filter FiscalPeriods to count.
+     * @example
+     * // Count the number of FiscalPeriods
+     * const count = await prisma.fiscalPeriod.count({
+     *   where: {
+     *     // ... the filter for the FiscalPeriods we want to count
+     *   }
+     * })
+    **/
+    count<T extends FiscalPeriodCountArgs>(
+      args?: Subset<T, FiscalPeriodCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FiscalPeriodCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FiscalPeriod.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FiscalPeriodAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FiscalPeriodAggregateArgs>(args: Subset<T, FiscalPeriodAggregateArgs>): Prisma.PrismaPromise<GetFiscalPeriodAggregateType<T>>
+
+    /**
+     * Group by FiscalPeriod.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FiscalPeriodGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FiscalPeriodGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FiscalPeriodGroupByArgs['orderBy'] }
+        : { orderBy?: FiscalPeriodGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FiscalPeriodGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFiscalPeriodGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FiscalPeriod model
+   */
+  readonly fields: FiscalPeriodFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FiscalPeriod.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FiscalPeriodClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FiscalPeriod model
+   */
+  interface FiscalPeriodFieldRefs {
+    readonly ki: FieldRef<"FiscalPeriod", 'Int'>
+    readonly startDate: FieldRef<"FiscalPeriod", 'String'>
+    readonly endDate: FieldRef<"FiscalPeriod", 'String'>
+    readonly grantDate: FieldRef<"FiscalPeriod", 'String'>
+    readonly fiscalStartMonth: FieldRef<"FiscalPeriod", 'Int'>
+    readonly monthCount: FieldRef<"FiscalPeriod", 'Int'>
+    readonly isShortPeriod: FieldRef<"FiscalPeriod", 'Boolean'>
+    readonly created_at: FieldRef<"FiscalPeriod", 'DateTime'>
+    readonly updated_at: FieldRef<"FiscalPeriod", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FiscalPeriod findUnique
+   */
+  export type FiscalPeriodFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * Filter, which FiscalPeriod to fetch.
+     */
+    where: FiscalPeriodWhereUniqueInput
+  }
+
+  /**
+   * FiscalPeriod findUniqueOrThrow
+   */
+  export type FiscalPeriodFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * Filter, which FiscalPeriod to fetch.
+     */
+    where: FiscalPeriodWhereUniqueInput
+  }
+
+  /**
+   * FiscalPeriod findFirst
+   */
+  export type FiscalPeriodFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * Filter, which FiscalPeriod to fetch.
+     */
+    where?: FiscalPeriodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FiscalPeriods to fetch.
+     */
+    orderBy?: FiscalPeriodOrderByWithRelationInput | FiscalPeriodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FiscalPeriods.
+     */
+    cursor?: FiscalPeriodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FiscalPeriods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FiscalPeriods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FiscalPeriods.
+     */
+    distinct?: FiscalPeriodScalarFieldEnum | FiscalPeriodScalarFieldEnum[]
+  }
+
+  /**
+   * FiscalPeriod findFirstOrThrow
+   */
+  export type FiscalPeriodFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * Filter, which FiscalPeriod to fetch.
+     */
+    where?: FiscalPeriodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FiscalPeriods to fetch.
+     */
+    orderBy?: FiscalPeriodOrderByWithRelationInput | FiscalPeriodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FiscalPeriods.
+     */
+    cursor?: FiscalPeriodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FiscalPeriods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FiscalPeriods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FiscalPeriods.
+     */
+    distinct?: FiscalPeriodScalarFieldEnum | FiscalPeriodScalarFieldEnum[]
+  }
+
+  /**
+   * FiscalPeriod findMany
+   */
+  export type FiscalPeriodFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * Filter, which FiscalPeriods to fetch.
+     */
+    where?: FiscalPeriodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FiscalPeriods to fetch.
+     */
+    orderBy?: FiscalPeriodOrderByWithRelationInput | FiscalPeriodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FiscalPeriods.
+     */
+    cursor?: FiscalPeriodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FiscalPeriods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FiscalPeriods.
+     */
+    skip?: number
+    distinct?: FiscalPeriodScalarFieldEnum | FiscalPeriodScalarFieldEnum[]
+  }
+
+  /**
+   * FiscalPeriod create
+   */
+  export type FiscalPeriodCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * The data needed to create a FiscalPeriod.
+     */
+    data: XOR<FiscalPeriodCreateInput, FiscalPeriodUncheckedCreateInput>
+  }
+
+  /**
+   * FiscalPeriod createMany
+   */
+  export type FiscalPeriodCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FiscalPeriods.
+     */
+    data: FiscalPeriodCreateManyInput | FiscalPeriodCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FiscalPeriod createManyAndReturn
+   */
+  export type FiscalPeriodCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * The data used to create many FiscalPeriods.
+     */
+    data: FiscalPeriodCreateManyInput | FiscalPeriodCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FiscalPeriod update
+   */
+  export type FiscalPeriodUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * The data needed to update a FiscalPeriod.
+     */
+    data: XOR<FiscalPeriodUpdateInput, FiscalPeriodUncheckedUpdateInput>
+    /**
+     * Choose, which FiscalPeriod to update.
+     */
+    where: FiscalPeriodWhereUniqueInput
+  }
+
+  /**
+   * FiscalPeriod updateMany
+   */
+  export type FiscalPeriodUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FiscalPeriods.
+     */
+    data: XOR<FiscalPeriodUpdateManyMutationInput, FiscalPeriodUncheckedUpdateManyInput>
+    /**
+     * Filter which FiscalPeriods to update
+     */
+    where?: FiscalPeriodWhereInput
+    /**
+     * Limit how many FiscalPeriods to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FiscalPeriod updateManyAndReturn
+   */
+  export type FiscalPeriodUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * The data used to update FiscalPeriods.
+     */
+    data: XOR<FiscalPeriodUpdateManyMutationInput, FiscalPeriodUncheckedUpdateManyInput>
+    /**
+     * Filter which FiscalPeriods to update
+     */
+    where?: FiscalPeriodWhereInput
+    /**
+     * Limit how many FiscalPeriods to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FiscalPeriod upsert
+   */
+  export type FiscalPeriodUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * The filter to search for the FiscalPeriod to update in case it exists.
+     */
+    where: FiscalPeriodWhereUniqueInput
+    /**
+     * In case the FiscalPeriod found by the `where` argument doesn't exist, create a new FiscalPeriod with this data.
+     */
+    create: XOR<FiscalPeriodCreateInput, FiscalPeriodUncheckedCreateInput>
+    /**
+     * In case the FiscalPeriod was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FiscalPeriodUpdateInput, FiscalPeriodUncheckedUpdateInput>
+  }
+
+  /**
+   * FiscalPeriod delete
+   */
+  export type FiscalPeriodDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+    /**
+     * Filter which FiscalPeriod to delete.
+     */
+    where: FiscalPeriodWhereUniqueInput
+  }
+
+  /**
+   * FiscalPeriod deleteMany
+   */
+  export type FiscalPeriodDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FiscalPeriods to delete
+     */
+    where?: FiscalPeriodWhereInput
+    /**
+     * Limit how many FiscalPeriods to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FiscalPeriod without action
+   */
+  export type FiscalPeriodDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FiscalPeriod
+     */
+    select?: FiscalPeriodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FiscalPeriod
+     */
+    omit?: FiscalPeriodOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Model Kintai
    */
 
@@ -5956,6 +7156,8 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number | null
     jiko: number | null
     kurikoshi: number | null
+    grantedOverride: number | null
+    totalUsedAdjustment: number | null
     month01: number | null
     month02: number | null
     month03: number | null
@@ -5980,6 +7182,8 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number | null
     jiko: number | null
     kurikoshi: number | null
+    grantedOverride: number | null
+    totalUsedAdjustment: number | null
     month01: number | null
     month02: number | null
     month03: number | null
@@ -6008,6 +7212,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number | null
     jiko: number | null
     kurikoshi: number | null
+    grantedOverride: number | null
+    grantedOverrideReason: string | null
+    grantedOverrideBy: string | null
+    grantedOverrideAt: Date | null
+    totalUsedAdjustment: number | null
+    totalUsedAdjustmentReason: string | null
+    totalUsedAdjustmentBy: string | null
+    totalUsedAdjustmentAt: Date | null
     month01: number | null
     month02: number | null
     month03: number | null
@@ -6040,6 +7252,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number | null
     jiko: number | null
     kurikoshi: number | null
+    grantedOverride: number | null
+    grantedOverrideReason: string | null
+    grantedOverrideBy: string | null
+    grantedOverrideAt: Date | null
+    totalUsedAdjustment: number | null
+    totalUsedAdjustmentReason: string | null
+    totalUsedAdjustmentBy: string | null
+    totalUsedAdjustmentAt: Date | null
     month01: number | null
     month02: number | null
     month03: number | null
@@ -6072,6 +7292,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number
     jiko: number
     kurikoshi: number
+    grantedOverride: number
+    grantedOverrideReason: number
+    grantedOverrideBy: number
+    grantedOverrideAt: number
+    totalUsedAdjustment: number
+    totalUsedAdjustmentReason: number
+    totalUsedAdjustmentBy: number
+    totalUsedAdjustmentAt: number
     month01: number
     month02: number
     month03: number
@@ -6102,6 +7330,8 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: true
     jiko?: true
     kurikoshi?: true
+    grantedOverride?: true
+    totalUsedAdjustment?: true
     month01?: true
     month02?: true
     month03?: true
@@ -6126,6 +7356,8 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: true
     jiko?: true
     kurikoshi?: true
+    grantedOverride?: true
+    totalUsedAdjustment?: true
     month01?: true
     month02?: true
     month03?: true
@@ -6154,6 +7386,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: true
     jiko?: true
     kurikoshi?: true
+    grantedOverride?: true
+    grantedOverrideReason?: true
+    grantedOverrideBy?: true
+    grantedOverrideAt?: true
+    totalUsedAdjustment?: true
+    totalUsedAdjustmentReason?: true
+    totalUsedAdjustmentBy?: true
+    totalUsedAdjustmentAt?: true
     month01?: true
     month02?: true
     month03?: true
@@ -6186,6 +7426,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: true
     jiko?: true
     kurikoshi?: true
+    grantedOverride?: true
+    grantedOverrideReason?: true
+    grantedOverrideBy?: true
+    grantedOverrideAt?: true
+    totalUsedAdjustment?: true
+    totalUsedAdjustmentReason?: true
+    totalUsedAdjustmentBy?: true
+    totalUsedAdjustmentAt?: true
     month01?: true
     month02?: true
     month03?: true
@@ -6218,6 +7466,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: true
     jiko?: true
     kurikoshi?: true
+    grantedOverride?: true
+    grantedOverrideReason?: true
+    grantedOverrideBy?: true
+    grantedOverrideAt?: true
+    totalUsedAdjustment?: true
+    totalUsedAdjustmentReason?: true
+    totalUsedAdjustmentBy?: true
+    totalUsedAdjustmentAt?: true
     month01?: true
     month02?: true
     month03?: true
@@ -6337,6 +7593,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number
     jiko: number
     kurikoshi: number
+    grantedOverride: number | null
+    grantedOverrideReason: string | null
+    grantedOverrideBy: string | null
+    grantedOverrideAt: Date | null
+    totalUsedAdjustment: number | null
+    totalUsedAdjustmentReason: string | null
+    totalUsedAdjustmentBy: string | null
+    totalUsedAdjustmentAt: Date | null
     month01: number
     month02: number
     month03: number
@@ -6388,6 +7652,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: boolean
     jiko?: boolean
     kurikoshi?: boolean
+    grantedOverride?: boolean
+    grantedOverrideReason?: boolean
+    grantedOverrideBy?: boolean
+    grantedOverrideAt?: boolean
+    totalUsedAdjustment?: boolean
+    totalUsedAdjustmentReason?: boolean
+    totalUsedAdjustmentBy?: boolean
+    totalUsedAdjustmentAt?: boolean
     month01?: boolean
     month02?: boolean
     month03?: boolean
@@ -6420,6 +7692,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: boolean
     jiko?: boolean
     kurikoshi?: boolean
+    grantedOverride?: boolean
+    grantedOverrideReason?: boolean
+    grantedOverrideBy?: boolean
+    grantedOverrideAt?: boolean
+    totalUsedAdjustment?: boolean
+    totalUsedAdjustmentReason?: boolean
+    totalUsedAdjustmentBy?: boolean
+    totalUsedAdjustmentAt?: boolean
     month01?: boolean
     month02?: boolean
     month03?: boolean
@@ -6452,6 +7732,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: boolean
     jiko?: boolean
     kurikoshi?: boolean
+    grantedOverride?: boolean
+    grantedOverrideReason?: boolean
+    grantedOverrideBy?: boolean
+    grantedOverrideAt?: boolean
+    totalUsedAdjustment?: boolean
+    totalUsedAdjustmentReason?: boolean
+    totalUsedAdjustmentBy?: boolean
+    totalUsedAdjustmentAt?: boolean
     month01?: boolean
     month02?: boolean
     month03?: boolean
@@ -6484,6 +7772,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: boolean
     jiko?: boolean
     kurikoshi?: boolean
+    grantedOverride?: boolean
+    grantedOverrideReason?: boolean
+    grantedOverrideBy?: boolean
+    grantedOverrideAt?: boolean
+    totalUsedAdjustment?: boolean
+    totalUsedAdjustmentReason?: boolean
+    totalUsedAdjustmentBy?: boolean
+    totalUsedAdjustmentAt?: boolean
     month01?: boolean
     month02?: boolean
     month03?: boolean
@@ -6502,7 +7798,7 @@ export namespace Prisma {
     updated_by?: boolean
   }
 
-  export type AnnualYukyuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "ki" | "standardDate" | "start" | "end" | "grantedOrigin" | "granted" | "totalUsed" | "prevPrevKurikoshi" | "prevKurikoshi" | "kurikoshiBeforeJiko" | "jiko" | "kurikoshi" | "month01" | "month02" | "month03" | "month04" | "month05" | "month06" | "month07" | "month08" | "month09" | "month10" | "month11" | "month12" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["annualYukyu"]>
+  export type AnnualYukyuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "ki" | "standardDate" | "start" | "end" | "grantedOrigin" | "granted" | "totalUsed" | "prevPrevKurikoshi" | "prevKurikoshi" | "kurikoshiBeforeJiko" | "jiko" | "kurikoshi" | "grantedOverride" | "grantedOverrideReason" | "grantedOverrideBy" | "grantedOverrideAt" | "totalUsedAdjustment" | "totalUsedAdjustmentReason" | "totalUsedAdjustmentBy" | "totalUsedAdjustmentAt" | "month01" | "month02" | "month03" | "month04" | "month05" | "month06" | "month07" | "month08" | "month09" | "month10" | "month11" | "month12" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["annualYukyu"]>
 
   export type $AnnualYukyuPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "AnnualYukyu"
@@ -6521,6 +7817,14 @@ export namespace Prisma {
       kurikoshiBeforeJiko: number
       jiko: number
       kurikoshi: number
+      grantedOverride: number | null
+      grantedOverrideReason: string | null
+      grantedOverrideBy: string | null
+      grantedOverrideAt: Date | null
+      totalUsedAdjustment: number | null
+      totalUsedAdjustmentReason: string | null
+      totalUsedAdjustmentBy: string | null
+      totalUsedAdjustmentAt: Date | null
       month01: number
       month02: number
       month03: number
@@ -6973,6 +8277,14 @@ export namespace Prisma {
     readonly kurikoshiBeforeJiko: FieldRef<"AnnualYukyu", 'Float'>
     readonly jiko: FieldRef<"AnnualYukyu", 'Float'>
     readonly kurikoshi: FieldRef<"AnnualYukyu", 'Float'>
+    readonly grantedOverride: FieldRef<"AnnualYukyu", 'Float'>
+    readonly grantedOverrideReason: FieldRef<"AnnualYukyu", 'String'>
+    readonly grantedOverrideBy: FieldRef<"AnnualYukyu", 'String'>
+    readonly grantedOverrideAt: FieldRef<"AnnualYukyu", 'DateTime'>
+    readonly totalUsedAdjustment: FieldRef<"AnnualYukyu", 'Float'>
+    readonly totalUsedAdjustmentReason: FieldRef<"AnnualYukyu", 'String'>
+    readonly totalUsedAdjustmentBy: FieldRef<"AnnualYukyu", 'String'>
+    readonly totalUsedAdjustmentAt: FieldRef<"AnnualYukyu", 'DateTime'>
     readonly month01: FieldRef<"AnnualYukyu", 'Float'>
     readonly month02: FieldRef<"AnnualYukyu", 'Float'>
     readonly month03: FieldRef<"AnnualYukyu", 'Float'>
@@ -7378,6 +8690,7 @@ export namespace Prisma {
     work_day_per_week: 'work_day_per_week',
     file_id: 'file_id',
     is_admin: 'is_admin',
+    is_kintai_target: 'is_kintai_target',
     is_removed: 'is_removed',
     created_at: 'created_at',
     updated_at: 'updated_at',
@@ -7412,6 +8725,21 @@ export namespace Prisma {
   };
 
   export type HolidaysScalarFieldEnum = (typeof HolidaysScalarFieldEnum)[keyof typeof HolidaysScalarFieldEnum]
+
+
+  export const FiscalPeriodScalarFieldEnum: {
+    ki: 'ki',
+    startDate: 'startDate',
+    endDate: 'endDate',
+    grantDate: 'grantDate',
+    fiscalStartMonth: 'fiscalStartMonth',
+    monthCount: 'monthCount',
+    isShortPeriod: 'isShortPeriod',
+    created_at: 'created_at',
+    updated_at: 'updated_at'
+  };
+
+  export type FiscalPeriodScalarFieldEnum = (typeof FiscalPeriodScalarFieldEnum)[keyof typeof FiscalPeriodScalarFieldEnum]
 
 
   export const KintaiScalarFieldEnum: {
@@ -7451,6 +8779,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: 'kurikoshiBeforeJiko',
     jiko: 'jiko',
     kurikoshi: 'kurikoshi',
+    grantedOverride: 'grantedOverride',
+    grantedOverrideReason: 'grantedOverrideReason',
+    grantedOverrideBy: 'grantedOverrideBy',
+    grantedOverrideAt: 'grantedOverrideAt',
+    totalUsedAdjustment: 'totalUsedAdjustment',
+    totalUsedAdjustmentReason: 'totalUsedAdjustmentReason',
+    totalUsedAdjustmentBy: 'totalUsedAdjustmentBy',
+    totalUsedAdjustmentAt: 'totalUsedAdjustmentAt',
     month01: 'month01',
     month02: 'month02',
     month03: 'month03',
@@ -7593,6 +8929,7 @@ export namespace Prisma {
     work_day_per_week?: IntFilter<"User"> | number
     file_id?: StringNullableFilter<"User"> | string | null
     is_admin?: BoolFilter<"User"> | boolean
+    is_kintai_target?: BoolFilter<"User"> | boolean
     is_removed?: BoolFilter<"User"> | boolean
     created_at?: DateTimeFilter<"User"> | Date | string
     updated_at?: DateTimeFilter<"User"> | Date | string
@@ -7612,6 +8949,7 @@ export namespace Prisma {
     work_day_per_week?: SortOrder
     file_id?: SortOrderInput | SortOrder
     is_admin?: SortOrder
+    is_kintai_target?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -7634,6 +8972,7 @@ export namespace Prisma {
     work_day_per_week?: IntFilter<"User"> | number
     file_id?: StringNullableFilter<"User"> | string | null
     is_admin?: BoolFilter<"User"> | boolean
+    is_kintai_target?: BoolFilter<"User"> | boolean
     is_removed?: BoolFilter<"User"> | boolean
     created_at?: DateTimeFilter<"User"> | Date | string
     updated_at?: DateTimeFilter<"User"> | Date | string
@@ -7653,6 +8992,7 @@ export namespace Prisma {
     work_day_per_week?: SortOrder
     file_id?: SortOrderInput | SortOrder
     is_admin?: SortOrder
+    is_kintai_target?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -7677,6 +9017,7 @@ export namespace Prisma {
     work_day_per_week?: IntWithAggregatesFilter<"User"> | number
     file_id?: StringNullableWithAggregatesFilter<"User"> | string | null
     is_admin?: BoolWithAggregatesFilter<"User"> | boolean
+    is_kintai_target?: BoolWithAggregatesFilter<"User"> | boolean
     is_removed?: BoolWithAggregatesFilter<"User"> | boolean
     created_at?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -7815,6 +9156,80 @@ export namespace Prisma {
     updated_by?: StringNullableWithAggregatesFilter<"Holidays"> | string | null
   }
 
+  export type FiscalPeriodWhereInput = {
+    AND?: FiscalPeriodWhereInput | FiscalPeriodWhereInput[]
+    OR?: FiscalPeriodWhereInput[]
+    NOT?: FiscalPeriodWhereInput | FiscalPeriodWhereInput[]
+    ki?: IntFilter<"FiscalPeriod"> | number
+    startDate?: StringFilter<"FiscalPeriod"> | string
+    endDate?: StringFilter<"FiscalPeriod"> | string
+    grantDate?: StringFilter<"FiscalPeriod"> | string
+    fiscalStartMonth?: IntFilter<"FiscalPeriod"> | number
+    monthCount?: IntFilter<"FiscalPeriod"> | number
+    isShortPeriod?: BoolFilter<"FiscalPeriod"> | boolean
+    created_at?: DateTimeFilter<"FiscalPeriod"> | Date | string
+    updated_at?: DateTimeFilter<"FiscalPeriod"> | Date | string
+  }
+
+  export type FiscalPeriodOrderByWithRelationInput = {
+    ki?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    grantDate?: SortOrder
+    fiscalStartMonth?: SortOrder
+    monthCount?: SortOrder
+    isShortPeriod?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type FiscalPeriodWhereUniqueInput = Prisma.AtLeast<{
+    ki?: number
+    AND?: FiscalPeriodWhereInput | FiscalPeriodWhereInput[]
+    OR?: FiscalPeriodWhereInput[]
+    NOT?: FiscalPeriodWhereInput | FiscalPeriodWhereInput[]
+    startDate?: StringFilter<"FiscalPeriod"> | string
+    endDate?: StringFilter<"FiscalPeriod"> | string
+    grantDate?: StringFilter<"FiscalPeriod"> | string
+    fiscalStartMonth?: IntFilter<"FiscalPeriod"> | number
+    monthCount?: IntFilter<"FiscalPeriod"> | number
+    isShortPeriod?: BoolFilter<"FiscalPeriod"> | boolean
+    created_at?: DateTimeFilter<"FiscalPeriod"> | Date | string
+    updated_at?: DateTimeFilter<"FiscalPeriod"> | Date | string
+  }, "ki">
+
+  export type FiscalPeriodOrderByWithAggregationInput = {
+    ki?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    grantDate?: SortOrder
+    fiscalStartMonth?: SortOrder
+    monthCount?: SortOrder
+    isShortPeriod?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    _count?: FiscalPeriodCountOrderByAggregateInput
+    _avg?: FiscalPeriodAvgOrderByAggregateInput
+    _max?: FiscalPeriodMaxOrderByAggregateInput
+    _min?: FiscalPeriodMinOrderByAggregateInput
+    _sum?: FiscalPeriodSumOrderByAggregateInput
+  }
+
+  export type FiscalPeriodScalarWhereWithAggregatesInput = {
+    AND?: FiscalPeriodScalarWhereWithAggregatesInput | FiscalPeriodScalarWhereWithAggregatesInput[]
+    OR?: FiscalPeriodScalarWhereWithAggregatesInput[]
+    NOT?: FiscalPeriodScalarWhereWithAggregatesInput | FiscalPeriodScalarWhereWithAggregatesInput[]
+    ki?: IntWithAggregatesFilter<"FiscalPeriod"> | number
+    startDate?: StringWithAggregatesFilter<"FiscalPeriod"> | string
+    endDate?: StringWithAggregatesFilter<"FiscalPeriod"> | string
+    grantDate?: StringWithAggregatesFilter<"FiscalPeriod"> | string
+    fiscalStartMonth?: IntWithAggregatesFilter<"FiscalPeriod"> | number
+    monthCount?: IntWithAggregatesFilter<"FiscalPeriod"> | number
+    isShortPeriod?: BoolWithAggregatesFilter<"FiscalPeriod"> | boolean
+    created_at?: DateTimeWithAggregatesFilter<"FiscalPeriod"> | Date | string
+    updated_at?: DateTimeWithAggregatesFilter<"FiscalPeriod"> | Date | string
+  }
+
   export type KintaiWhereInput = {
     AND?: KintaiWhereInput | KintaiWhereInput[]
     OR?: KintaiWhereInput[]
@@ -7950,6 +9365,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: FloatFilter<"AnnualYukyu"> | number
     jiko?: FloatFilter<"AnnualYukyu"> | number
     kurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    grantedOverride?: FloatNullableFilter<"AnnualYukyu"> | number | null
+    grantedOverrideReason?: StringNullableFilter<"AnnualYukyu"> | string | null
+    grantedOverrideBy?: StringNullableFilter<"AnnualYukyu"> | string | null
+    grantedOverrideAt?: DateTimeNullableFilter<"AnnualYukyu"> | Date | string | null
+    totalUsedAdjustment?: FloatNullableFilter<"AnnualYukyu"> | number | null
+    totalUsedAdjustmentReason?: StringNullableFilter<"AnnualYukyu"> | string | null
+    totalUsedAdjustmentBy?: StringNullableFilter<"AnnualYukyu"> | string | null
+    totalUsedAdjustmentAt?: DateTimeNullableFilter<"AnnualYukyu"> | Date | string | null
     month01?: FloatFilter<"AnnualYukyu"> | number
     month02?: FloatFilter<"AnnualYukyu"> | number
     month03?: FloatFilter<"AnnualYukyu"> | number
@@ -7982,6 +9405,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: SortOrder
     jiko?: SortOrder
     kurikoshi?: SortOrder
+    grantedOverride?: SortOrderInput | SortOrder
+    grantedOverrideReason?: SortOrderInput | SortOrder
+    grantedOverrideBy?: SortOrderInput | SortOrder
+    grantedOverrideAt?: SortOrderInput | SortOrder
+    totalUsedAdjustment?: SortOrderInput | SortOrder
+    totalUsedAdjustmentReason?: SortOrderInput | SortOrder
+    totalUsedAdjustmentBy?: SortOrderInput | SortOrder
+    totalUsedAdjustmentAt?: SortOrderInput | SortOrder
     month01?: SortOrder
     month02?: SortOrder
     month03?: SortOrder
@@ -8018,6 +9449,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: FloatFilter<"AnnualYukyu"> | number
     jiko?: FloatFilter<"AnnualYukyu"> | number
     kurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    grantedOverride?: FloatNullableFilter<"AnnualYukyu"> | number | null
+    grantedOverrideReason?: StringNullableFilter<"AnnualYukyu"> | string | null
+    grantedOverrideBy?: StringNullableFilter<"AnnualYukyu"> | string | null
+    grantedOverrideAt?: DateTimeNullableFilter<"AnnualYukyu"> | Date | string | null
+    totalUsedAdjustment?: FloatNullableFilter<"AnnualYukyu"> | number | null
+    totalUsedAdjustmentReason?: StringNullableFilter<"AnnualYukyu"> | string | null
+    totalUsedAdjustmentBy?: StringNullableFilter<"AnnualYukyu"> | string | null
+    totalUsedAdjustmentAt?: DateTimeNullableFilter<"AnnualYukyu"> | Date | string | null
     month01?: FloatFilter<"AnnualYukyu"> | number
     month02?: FloatFilter<"AnnualYukyu"> | number
     month03?: FloatFilter<"AnnualYukyu"> | number
@@ -8050,6 +9489,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: SortOrder
     jiko?: SortOrder
     kurikoshi?: SortOrder
+    grantedOverride?: SortOrderInput | SortOrder
+    grantedOverrideReason?: SortOrderInput | SortOrder
+    grantedOverrideBy?: SortOrderInput | SortOrder
+    grantedOverrideAt?: SortOrderInput | SortOrder
+    totalUsedAdjustment?: SortOrderInput | SortOrder
+    totalUsedAdjustmentReason?: SortOrderInput | SortOrder
+    totalUsedAdjustmentBy?: SortOrderInput | SortOrder
+    totalUsedAdjustmentAt?: SortOrderInput | SortOrder
     month01?: SortOrder
     month02?: SortOrder
     month03?: SortOrder
@@ -8090,6 +9537,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     jiko?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     kurikoshi?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    grantedOverride?: FloatNullableWithAggregatesFilter<"AnnualYukyu"> | number | null
+    grantedOverrideReason?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
+    grantedOverrideBy?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
+    grantedOverrideAt?: DateTimeNullableWithAggregatesFilter<"AnnualYukyu"> | Date | string | null
+    totalUsedAdjustment?: FloatNullableWithAggregatesFilter<"AnnualYukyu"> | number | null
+    totalUsedAdjustmentReason?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
+    totalUsedAdjustmentBy?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
+    totalUsedAdjustmentAt?: DateTimeNullableWithAggregatesFilter<"AnnualYukyu"> | Date | string | null
     month01?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     month02?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     month03?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
@@ -8117,6 +9572,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -8136,6 +9592,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -8154,6 +9611,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8173,6 +9631,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8192,6 +9651,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -8207,6 +9667,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8223,6 +9684,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8366,6 +9828,90 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
     updated_by?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type FiscalPeriodCreateInput = {
+    ki: number
+    startDate: string
+    endDate: string
+    grantDate: string
+    fiscalStartMonth: number
+    monthCount?: number
+    isShortPeriod?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string
+  }
+
+  export type FiscalPeriodUncheckedCreateInput = {
+    ki: number
+    startDate: string
+    endDate: string
+    grantDate: string
+    fiscalStartMonth: number
+    monthCount?: number
+    isShortPeriod?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string
+  }
+
+  export type FiscalPeriodUpdateInput = {
+    ki?: IntFieldUpdateOperationsInput | number
+    startDate?: StringFieldUpdateOperationsInput | string
+    endDate?: StringFieldUpdateOperationsInput | string
+    grantDate?: StringFieldUpdateOperationsInput | string
+    fiscalStartMonth?: IntFieldUpdateOperationsInput | number
+    monthCount?: IntFieldUpdateOperationsInput | number
+    isShortPeriod?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FiscalPeriodUncheckedUpdateInput = {
+    ki?: IntFieldUpdateOperationsInput | number
+    startDate?: StringFieldUpdateOperationsInput | string
+    endDate?: StringFieldUpdateOperationsInput | string
+    grantDate?: StringFieldUpdateOperationsInput | string
+    fiscalStartMonth?: IntFieldUpdateOperationsInput | number
+    monthCount?: IntFieldUpdateOperationsInput | number
+    isShortPeriod?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FiscalPeriodCreateManyInput = {
+    ki: number
+    startDate: string
+    endDate: string
+    grantDate: string
+    fiscalStartMonth: number
+    monthCount?: number
+    isShortPeriod?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string
+  }
+
+  export type FiscalPeriodUpdateManyMutationInput = {
+    ki?: IntFieldUpdateOperationsInput | number
+    startDate?: StringFieldUpdateOperationsInput | string
+    endDate?: StringFieldUpdateOperationsInput | string
+    grantDate?: StringFieldUpdateOperationsInput | string
+    fiscalStartMonth?: IntFieldUpdateOperationsInput | number
+    monthCount?: IntFieldUpdateOperationsInput | number
+    isShortPeriod?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FiscalPeriodUncheckedUpdateManyInput = {
+    ki?: IntFieldUpdateOperationsInput | number
+    startDate?: StringFieldUpdateOperationsInput | string
+    endDate?: StringFieldUpdateOperationsInput | string
+    grantDate?: StringFieldUpdateOperationsInput | string
+    fiscalStartMonth?: IntFieldUpdateOperationsInput | number
+    monthCount?: IntFieldUpdateOperationsInput | number
+    isShortPeriod?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type KintaiCreateInput = {
@@ -8521,6 +10067,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number
     jiko: number
     kurikoshi: number
+    grantedOverride?: number | null
+    grantedOverrideReason?: string | null
+    grantedOverrideBy?: string | null
+    grantedOverrideAt?: Date | string | null
+    totalUsedAdjustment?: number | null
+    totalUsedAdjustmentReason?: string | null
+    totalUsedAdjustmentBy?: string | null
+    totalUsedAdjustmentAt?: Date | string | null
     month01?: number
     month02?: number
     month03?: number
@@ -8553,6 +10107,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number
     jiko: number
     kurikoshi: number
+    grantedOverride?: number | null
+    grantedOverrideReason?: string | null
+    grantedOverrideBy?: string | null
+    grantedOverrideAt?: Date | string | null
+    totalUsedAdjustment?: number | null
+    totalUsedAdjustmentReason?: string | null
+    totalUsedAdjustmentBy?: string | null
+    totalUsedAdjustmentAt?: Date | string | null
     month01?: number
     month02?: number
     month03?: number
@@ -8585,6 +10147,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
     jiko?: FloatFieldUpdateOperationsInput | number
     kurikoshi?: FloatFieldUpdateOperationsInput | number
+    grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
+    grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    totalUsedAdjustment?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     month01?: FloatFieldUpdateOperationsInput | number
     month02?: FloatFieldUpdateOperationsInput | number
     month03?: FloatFieldUpdateOperationsInput | number
@@ -8617,6 +10187,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
     jiko?: FloatFieldUpdateOperationsInput | number
     kurikoshi?: FloatFieldUpdateOperationsInput | number
+    grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
+    grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    totalUsedAdjustment?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     month01?: FloatFieldUpdateOperationsInput | number
     month02?: FloatFieldUpdateOperationsInput | number
     month03?: FloatFieldUpdateOperationsInput | number
@@ -8649,6 +10227,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko: number
     jiko: number
     kurikoshi: number
+    grantedOverride?: number | null
+    grantedOverrideReason?: string | null
+    grantedOverrideBy?: string | null
+    grantedOverrideAt?: Date | string | null
+    totalUsedAdjustment?: number | null
+    totalUsedAdjustmentReason?: string | null
+    totalUsedAdjustmentBy?: string | null
+    totalUsedAdjustmentAt?: Date | string | null
     month01?: number
     month02?: number
     month03?: number
@@ -8681,6 +10267,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
     jiko?: FloatFieldUpdateOperationsInput | number
     kurikoshi?: FloatFieldUpdateOperationsInput | number
+    grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
+    grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    totalUsedAdjustment?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     month01?: FloatFieldUpdateOperationsInput | number
     month02?: FloatFieldUpdateOperationsInput | number
     month03?: FloatFieldUpdateOperationsInput | number
@@ -8713,6 +10307,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
     jiko?: FloatFieldUpdateOperationsInput | number
     kurikoshi?: FloatFieldUpdateOperationsInput | number
+    grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
+    grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
+    grantedOverrideAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    totalUsedAdjustment?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
+    totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     month01?: FloatFieldUpdateOperationsInput | number
     month02?: FloatFieldUpdateOperationsInput | number
     month03?: FloatFieldUpdateOperationsInput | number
@@ -8822,6 +10424,7 @@ export namespace Prisma {
     work_day_per_week?: SortOrder
     file_id?: SortOrder
     is_admin?: SortOrder
+    is_kintai_target?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -8843,6 +10446,7 @@ export namespace Prisma {
     work_day_per_week?: SortOrder
     file_id?: SortOrder
     is_admin?: SortOrder
+    is_kintai_target?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -8859,6 +10463,7 @@ export namespace Prisma {
     work_day_per_week?: SortOrder
     file_id?: SortOrder
     is_admin?: SortOrder
+    is_kintai_target?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -9015,6 +10620,54 @@ export namespace Prisma {
     updated_by?: SortOrder
   }
 
+  export type FiscalPeriodCountOrderByAggregateInput = {
+    ki?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    grantDate?: SortOrder
+    fiscalStartMonth?: SortOrder
+    monthCount?: SortOrder
+    isShortPeriod?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type FiscalPeriodAvgOrderByAggregateInput = {
+    ki?: SortOrder
+    fiscalStartMonth?: SortOrder
+    monthCount?: SortOrder
+  }
+
+  export type FiscalPeriodMaxOrderByAggregateInput = {
+    ki?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    grantDate?: SortOrder
+    fiscalStartMonth?: SortOrder
+    monthCount?: SortOrder
+    isShortPeriod?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type FiscalPeriodMinOrderByAggregateInput = {
+    ki?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    grantDate?: SortOrder
+    fiscalStartMonth?: SortOrder
+    monthCount?: SortOrder
+    isShortPeriod?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type FiscalPeriodSumOrderByAggregateInput = {
+    ki?: SortOrder
+    fiscalStartMonth?: SortOrder
+    monthCount?: SortOrder
+  }
+
   export type EnumHolidayTypeNullableFilter<$PrismaModel = never> = {
     equals?: $Enums.HolidayType | EnumHolidayTypeFieldRefInput<$PrismaModel> | null
     in?: $Enums.HolidayType[] | ListEnumHolidayTypeFieldRefInput<$PrismaModel> | null
@@ -9116,6 +10769,28 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type AnnualYukyuEmailKiCompoundUniqueInput = {
     email: string
     ki: number
@@ -9135,6 +10810,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: SortOrder
     jiko?: SortOrder
     kurikoshi?: SortOrder
+    grantedOverride?: SortOrder
+    grantedOverrideReason?: SortOrder
+    grantedOverrideBy?: SortOrder
+    grantedOverrideAt?: SortOrder
+    totalUsedAdjustment?: SortOrder
+    totalUsedAdjustmentReason?: SortOrder
+    totalUsedAdjustmentBy?: SortOrder
+    totalUsedAdjustmentAt?: SortOrder
     month01?: SortOrder
     month02?: SortOrder
     month03?: SortOrder
@@ -9163,6 +10846,8 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: SortOrder
     jiko?: SortOrder
     kurikoshi?: SortOrder
+    grantedOverride?: SortOrder
+    totalUsedAdjustment?: SortOrder
     month01?: SortOrder
     month02?: SortOrder
     month03?: SortOrder
@@ -9191,6 +10876,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: SortOrder
     jiko?: SortOrder
     kurikoshi?: SortOrder
+    grantedOverride?: SortOrder
+    grantedOverrideReason?: SortOrder
+    grantedOverrideBy?: SortOrder
+    grantedOverrideAt?: SortOrder
+    totalUsedAdjustment?: SortOrder
+    totalUsedAdjustmentReason?: SortOrder
+    totalUsedAdjustmentBy?: SortOrder
+    totalUsedAdjustmentAt?: SortOrder
     month01?: SortOrder
     month02?: SortOrder
     month03?: SortOrder
@@ -9223,6 +10916,14 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: SortOrder
     jiko?: SortOrder
     kurikoshi?: SortOrder
+    grantedOverride?: SortOrder
+    grantedOverrideReason?: SortOrder
+    grantedOverrideBy?: SortOrder
+    grantedOverrideAt?: SortOrder
+    totalUsedAdjustment?: SortOrder
+    totalUsedAdjustmentReason?: SortOrder
+    totalUsedAdjustmentBy?: SortOrder
+    totalUsedAdjustmentAt?: SortOrder
     month01?: SortOrder
     month02?: SortOrder
     month03?: SortOrder
@@ -9251,6 +10952,8 @@ export namespace Prisma {
     kurikoshiBeforeJiko?: SortOrder
     jiko?: SortOrder
     kurikoshi?: SortOrder
+    grantedOverride?: SortOrder
+    totalUsedAdjustment?: SortOrder
     month01?: SortOrder
     month02?: SortOrder
     month03?: SortOrder
@@ -9279,6 +10982,36 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type UserManagerCreateNestedManyWithoutUserInput = {
@@ -9485,6 +11218,18 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -9651,6 +11396,28 @@ export namespace Prisma {
     _max?: NestedEnumHolidayTypeNullableFilter<$PrismaModel>
   }
 
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -9665,6 +11432,36 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type UserManagerCreateWithoutUserInput = {
@@ -9859,6 +11656,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -9877,6 +11675,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -9900,6 +11699,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -9918,6 +11718,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -9951,6 +11752,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9969,6 +11771,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9997,6 +11800,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10015,6 +11819,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10033,6 +11838,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -10051,6 +11857,7 @@ export namespace Prisma {
     work_day_per_week?: number
     file_id?: string | null
     is_admin?: boolean
+    is_kintai_target?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -10084,6 +11891,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10102,6 +11910,7 @@ export namespace Prisma {
     work_day_per_week?: IntFieldUpdateOperationsInput | number
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
+    is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
