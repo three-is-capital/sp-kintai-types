@@ -7151,25 +7151,9 @@ export namespace Prisma {
     grantedOrigin: number | null
     granted: number | null
     totalUsed: number | null
-    prevPrevKurikoshi: number | null
-    prevKurikoshi: number | null
-    kurikoshiBeforeJiko: number | null
-    jiko: number | null
-    kurikoshi: number | null
+    openingCarryoverDays: number | null
     grantedOverride: number | null
     totalUsedAdjustment: number | null
-    month01: number | null
-    month02: number | null
-    month03: number | null
-    month04: number | null
-    month05: number | null
-    month06: number | null
-    month07: number | null
-    month08: number | null
-    month09: number | null
-    month10: number | null
-    month11: number | null
-    month12: number | null
   }
 
   export type AnnualYukyuSumAggregateOutputType = {
@@ -7177,25 +7161,9 @@ export namespace Prisma {
     grantedOrigin: number | null
     granted: number | null
     totalUsed: number | null
-    prevPrevKurikoshi: number | null
-    prevKurikoshi: number | null
-    kurikoshiBeforeJiko: number | null
-    jiko: number | null
-    kurikoshi: number | null
+    openingCarryoverDays: number | null
     grantedOverride: number | null
     totalUsedAdjustment: number | null
-    month01: number | null
-    month02: number | null
-    month03: number | null
-    month04: number | null
-    month05: number | null
-    month06: number | null
-    month07: number | null
-    month08: number | null
-    month09: number | null
-    month10: number | null
-    month11: number | null
-    month12: number | null
   }
 
   export type AnnualYukyuMinAggregateOutputType = {
@@ -7207,11 +7175,7 @@ export namespace Prisma {
     grantedOrigin: number | null
     granted: number | null
     totalUsed: number | null
-    prevPrevKurikoshi: number | null
-    prevKurikoshi: number | null
-    kurikoshiBeforeJiko: number | null
-    jiko: number | null
-    kurikoshi: number | null
+    openingCarryoverDays: number | null
     grantedOverride: number | null
     grantedOverrideReason: string | null
     grantedOverrideBy: string | null
@@ -7220,18 +7184,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason: string | null
     totalUsedAdjustmentBy: string | null
     totalUsedAdjustmentAt: Date | null
-    month01: number | null
-    month02: number | null
-    month03: number | null
-    month04: number | null
-    month05: number | null
-    month06: number | null
-    month07: number | null
-    month08: number | null
-    month09: number | null
-    month10: number | null
-    month11: number | null
-    month12: number | null
     created_at: Date | null
     updated_at: Date | null
     created_by: string | null
@@ -7247,11 +7199,7 @@ export namespace Prisma {
     grantedOrigin: number | null
     granted: number | null
     totalUsed: number | null
-    prevPrevKurikoshi: number | null
-    prevKurikoshi: number | null
-    kurikoshiBeforeJiko: number | null
-    jiko: number | null
-    kurikoshi: number | null
+    openingCarryoverDays: number | null
     grantedOverride: number | null
     grantedOverrideReason: string | null
     grantedOverrideBy: string | null
@@ -7260,18 +7208,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason: string | null
     totalUsedAdjustmentBy: string | null
     totalUsedAdjustmentAt: Date | null
-    month01: number | null
-    month02: number | null
-    month03: number | null
-    month04: number | null
-    month05: number | null
-    month06: number | null
-    month07: number | null
-    month08: number | null
-    month09: number | null
-    month10: number | null
-    month11: number | null
-    month12: number | null
     created_at: Date | null
     updated_at: Date | null
     created_by: string | null
@@ -7287,11 +7223,7 @@ export namespace Prisma {
     grantedOrigin: number
     granted: number
     totalUsed: number
-    prevPrevKurikoshi: number
-    prevKurikoshi: number
-    kurikoshiBeforeJiko: number
-    jiko: number
-    kurikoshi: number
+    openingCarryoverDays: number
     grantedOverride: number
     grantedOverrideReason: number
     grantedOverrideBy: number
@@ -7300,18 +7232,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason: number
     totalUsedAdjustmentBy: number
     totalUsedAdjustmentAt: number
-    month01: number
-    month02: number
-    month03: number
-    month04: number
-    month05: number
-    month06: number
-    month07: number
-    month08: number
-    month09: number
-    month10: number
-    month11: number
-    month12: number
     created_at: number
     updated_at: number
     created_by: number
@@ -7325,25 +7245,9 @@ export namespace Prisma {
     grantedOrigin?: true
     granted?: true
     totalUsed?: true
-    prevPrevKurikoshi?: true
-    prevKurikoshi?: true
-    kurikoshiBeforeJiko?: true
-    jiko?: true
-    kurikoshi?: true
+    openingCarryoverDays?: true
     grantedOverride?: true
     totalUsedAdjustment?: true
-    month01?: true
-    month02?: true
-    month03?: true
-    month04?: true
-    month05?: true
-    month06?: true
-    month07?: true
-    month08?: true
-    month09?: true
-    month10?: true
-    month11?: true
-    month12?: true
   }
 
   export type AnnualYukyuSumAggregateInputType = {
@@ -7351,25 +7255,9 @@ export namespace Prisma {
     grantedOrigin?: true
     granted?: true
     totalUsed?: true
-    prevPrevKurikoshi?: true
-    prevKurikoshi?: true
-    kurikoshiBeforeJiko?: true
-    jiko?: true
-    kurikoshi?: true
+    openingCarryoverDays?: true
     grantedOverride?: true
     totalUsedAdjustment?: true
-    month01?: true
-    month02?: true
-    month03?: true
-    month04?: true
-    month05?: true
-    month06?: true
-    month07?: true
-    month08?: true
-    month09?: true
-    month10?: true
-    month11?: true
-    month12?: true
   }
 
   export type AnnualYukyuMinAggregateInputType = {
@@ -7381,11 +7269,7 @@ export namespace Prisma {
     grantedOrigin?: true
     granted?: true
     totalUsed?: true
-    prevPrevKurikoshi?: true
-    prevKurikoshi?: true
-    kurikoshiBeforeJiko?: true
-    jiko?: true
-    kurikoshi?: true
+    openingCarryoverDays?: true
     grantedOverride?: true
     grantedOverrideReason?: true
     grantedOverrideBy?: true
@@ -7394,18 +7278,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: true
     totalUsedAdjustmentBy?: true
     totalUsedAdjustmentAt?: true
-    month01?: true
-    month02?: true
-    month03?: true
-    month04?: true
-    month05?: true
-    month06?: true
-    month07?: true
-    month08?: true
-    month09?: true
-    month10?: true
-    month11?: true
-    month12?: true
     created_at?: true
     updated_at?: true
     created_by?: true
@@ -7421,11 +7293,7 @@ export namespace Prisma {
     grantedOrigin?: true
     granted?: true
     totalUsed?: true
-    prevPrevKurikoshi?: true
-    prevKurikoshi?: true
-    kurikoshiBeforeJiko?: true
-    jiko?: true
-    kurikoshi?: true
+    openingCarryoverDays?: true
     grantedOverride?: true
     grantedOverrideReason?: true
     grantedOverrideBy?: true
@@ -7434,18 +7302,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: true
     totalUsedAdjustmentBy?: true
     totalUsedAdjustmentAt?: true
-    month01?: true
-    month02?: true
-    month03?: true
-    month04?: true
-    month05?: true
-    month06?: true
-    month07?: true
-    month08?: true
-    month09?: true
-    month10?: true
-    month11?: true
-    month12?: true
     created_at?: true
     updated_at?: true
     created_by?: true
@@ -7461,11 +7317,7 @@ export namespace Prisma {
     grantedOrigin?: true
     granted?: true
     totalUsed?: true
-    prevPrevKurikoshi?: true
-    prevKurikoshi?: true
-    kurikoshiBeforeJiko?: true
-    jiko?: true
-    kurikoshi?: true
+    openingCarryoverDays?: true
     grantedOverride?: true
     grantedOverrideReason?: true
     grantedOverrideBy?: true
@@ -7474,18 +7326,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: true
     totalUsedAdjustmentBy?: true
     totalUsedAdjustmentAt?: true
-    month01?: true
-    month02?: true
-    month03?: true
-    month04?: true
-    month05?: true
-    month06?: true
-    month07?: true
-    month08?: true
-    month09?: true
-    month10?: true
-    month11?: true
-    month12?: true
     created_at?: true
     updated_at?: true
     created_by?: true
@@ -7588,11 +7428,7 @@ export namespace Prisma {
     grantedOrigin: number
     granted: number
     totalUsed: number
-    prevPrevKurikoshi: number
-    prevKurikoshi: number
-    kurikoshiBeforeJiko: number
-    jiko: number
-    kurikoshi: number
+    openingCarryoverDays: number | null
     grantedOverride: number | null
     grantedOverrideReason: string | null
     grantedOverrideBy: string | null
@@ -7601,18 +7437,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason: string | null
     totalUsedAdjustmentBy: string | null
     totalUsedAdjustmentAt: Date | null
-    month01: number
-    month02: number
-    month03: number
-    month04: number
-    month05: number
-    month06: number
-    month07: number
-    month08: number
-    month09: number
-    month10: number
-    month11: number
-    month12: number
     created_at: Date
     updated_at: Date
     created_by: string | null
@@ -7647,11 +7471,7 @@ export namespace Prisma {
     grantedOrigin?: boolean
     granted?: boolean
     totalUsed?: boolean
-    prevPrevKurikoshi?: boolean
-    prevKurikoshi?: boolean
-    kurikoshiBeforeJiko?: boolean
-    jiko?: boolean
-    kurikoshi?: boolean
+    openingCarryoverDays?: boolean
     grantedOverride?: boolean
     grantedOverrideReason?: boolean
     grantedOverrideBy?: boolean
@@ -7660,18 +7480,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: boolean
     totalUsedAdjustmentBy?: boolean
     totalUsedAdjustmentAt?: boolean
-    month01?: boolean
-    month02?: boolean
-    month03?: boolean
-    month04?: boolean
-    month05?: boolean
-    month06?: boolean
-    month07?: boolean
-    month08?: boolean
-    month09?: boolean
-    month10?: boolean
-    month11?: boolean
-    month12?: boolean
     created_at?: boolean
     updated_at?: boolean
     created_by?: boolean
@@ -7687,11 +7495,7 @@ export namespace Prisma {
     grantedOrigin?: boolean
     granted?: boolean
     totalUsed?: boolean
-    prevPrevKurikoshi?: boolean
-    prevKurikoshi?: boolean
-    kurikoshiBeforeJiko?: boolean
-    jiko?: boolean
-    kurikoshi?: boolean
+    openingCarryoverDays?: boolean
     grantedOverride?: boolean
     grantedOverrideReason?: boolean
     grantedOverrideBy?: boolean
@@ -7700,18 +7504,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: boolean
     totalUsedAdjustmentBy?: boolean
     totalUsedAdjustmentAt?: boolean
-    month01?: boolean
-    month02?: boolean
-    month03?: boolean
-    month04?: boolean
-    month05?: boolean
-    month06?: boolean
-    month07?: boolean
-    month08?: boolean
-    month09?: boolean
-    month10?: boolean
-    month11?: boolean
-    month12?: boolean
     created_at?: boolean
     updated_at?: boolean
     created_by?: boolean
@@ -7727,11 +7519,7 @@ export namespace Prisma {
     grantedOrigin?: boolean
     granted?: boolean
     totalUsed?: boolean
-    prevPrevKurikoshi?: boolean
-    prevKurikoshi?: boolean
-    kurikoshiBeforeJiko?: boolean
-    jiko?: boolean
-    kurikoshi?: boolean
+    openingCarryoverDays?: boolean
     grantedOverride?: boolean
     grantedOverrideReason?: boolean
     grantedOverrideBy?: boolean
@@ -7740,18 +7528,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: boolean
     totalUsedAdjustmentBy?: boolean
     totalUsedAdjustmentAt?: boolean
-    month01?: boolean
-    month02?: boolean
-    month03?: boolean
-    month04?: boolean
-    month05?: boolean
-    month06?: boolean
-    month07?: boolean
-    month08?: boolean
-    month09?: boolean
-    month10?: boolean
-    month11?: boolean
-    month12?: boolean
     created_at?: boolean
     updated_at?: boolean
     created_by?: boolean
@@ -7767,11 +7543,7 @@ export namespace Prisma {
     grantedOrigin?: boolean
     granted?: boolean
     totalUsed?: boolean
-    prevPrevKurikoshi?: boolean
-    prevKurikoshi?: boolean
-    kurikoshiBeforeJiko?: boolean
-    jiko?: boolean
-    kurikoshi?: boolean
+    openingCarryoverDays?: boolean
     grantedOverride?: boolean
     grantedOverrideReason?: boolean
     grantedOverrideBy?: boolean
@@ -7780,25 +7552,13 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: boolean
     totalUsedAdjustmentBy?: boolean
     totalUsedAdjustmentAt?: boolean
-    month01?: boolean
-    month02?: boolean
-    month03?: boolean
-    month04?: boolean
-    month05?: boolean
-    month06?: boolean
-    month07?: boolean
-    month08?: boolean
-    month09?: boolean
-    month10?: boolean
-    month11?: boolean
-    month12?: boolean
     created_at?: boolean
     updated_at?: boolean
     created_by?: boolean
     updated_by?: boolean
   }
 
-  export type AnnualYukyuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "ki" | "standardDate" | "start" | "end" | "grantedOrigin" | "granted" | "totalUsed" | "prevPrevKurikoshi" | "prevKurikoshi" | "kurikoshiBeforeJiko" | "jiko" | "kurikoshi" | "grantedOverride" | "grantedOverrideReason" | "grantedOverrideBy" | "grantedOverrideAt" | "totalUsedAdjustment" | "totalUsedAdjustmentReason" | "totalUsedAdjustmentBy" | "totalUsedAdjustmentAt" | "month01" | "month02" | "month03" | "month04" | "month05" | "month06" | "month07" | "month08" | "month09" | "month10" | "month11" | "month12" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["annualYukyu"]>
+  export type AnnualYukyuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "ki" | "standardDate" | "start" | "end" | "grantedOrigin" | "granted" | "totalUsed" | "openingCarryoverDays" | "grantedOverride" | "grantedOverrideReason" | "grantedOverrideBy" | "grantedOverrideAt" | "totalUsedAdjustment" | "totalUsedAdjustmentReason" | "totalUsedAdjustmentBy" | "totalUsedAdjustmentAt" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["annualYukyu"]>
 
   export type $AnnualYukyuPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "AnnualYukyu"
@@ -7812,11 +7572,7 @@ export namespace Prisma {
       grantedOrigin: number
       granted: number
       totalUsed: number
-      prevPrevKurikoshi: number
-      prevKurikoshi: number
-      kurikoshiBeforeJiko: number
-      jiko: number
-      kurikoshi: number
+      openingCarryoverDays: number | null
       grantedOverride: number | null
       grantedOverrideReason: string | null
       grantedOverrideBy: string | null
@@ -7825,18 +7581,6 @@ export namespace Prisma {
       totalUsedAdjustmentReason: string | null
       totalUsedAdjustmentBy: string | null
       totalUsedAdjustmentAt: Date | null
-      month01: number
-      month02: number
-      month03: number
-      month04: number
-      month05: number
-      month06: number
-      month07: number
-      month08: number
-      month09: number
-      month10: number
-      month11: number
-      month12: number
       created_at: Date
       updated_at: Date
       created_by: string | null
@@ -8272,11 +8016,7 @@ export namespace Prisma {
     readonly grantedOrigin: FieldRef<"AnnualYukyu", 'Float'>
     readonly granted: FieldRef<"AnnualYukyu", 'Float'>
     readonly totalUsed: FieldRef<"AnnualYukyu", 'Float'>
-    readonly prevPrevKurikoshi: FieldRef<"AnnualYukyu", 'Float'>
-    readonly prevKurikoshi: FieldRef<"AnnualYukyu", 'Float'>
-    readonly kurikoshiBeforeJiko: FieldRef<"AnnualYukyu", 'Float'>
-    readonly jiko: FieldRef<"AnnualYukyu", 'Float'>
-    readonly kurikoshi: FieldRef<"AnnualYukyu", 'Float'>
+    readonly openingCarryoverDays: FieldRef<"AnnualYukyu", 'Float'>
     readonly grantedOverride: FieldRef<"AnnualYukyu", 'Float'>
     readonly grantedOverrideReason: FieldRef<"AnnualYukyu", 'String'>
     readonly grantedOverrideBy: FieldRef<"AnnualYukyu", 'String'>
@@ -8285,18 +8025,6 @@ export namespace Prisma {
     readonly totalUsedAdjustmentReason: FieldRef<"AnnualYukyu", 'String'>
     readonly totalUsedAdjustmentBy: FieldRef<"AnnualYukyu", 'String'>
     readonly totalUsedAdjustmentAt: FieldRef<"AnnualYukyu", 'DateTime'>
-    readonly month01: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month02: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month03: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month04: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month05: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month06: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month07: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month08: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month09: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month10: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month11: FieldRef<"AnnualYukyu", 'Float'>
-    readonly month12: FieldRef<"AnnualYukyu", 'Float'>
     readonly created_at: FieldRef<"AnnualYukyu", 'DateTime'>
     readonly updated_at: FieldRef<"AnnualYukyu", 'DateTime'>
     readonly created_by: FieldRef<"AnnualYukyu", 'String'>
@@ -8774,11 +8502,7 @@ export namespace Prisma {
     grantedOrigin: 'grantedOrigin',
     granted: 'granted',
     totalUsed: 'totalUsed',
-    prevPrevKurikoshi: 'prevPrevKurikoshi',
-    prevKurikoshi: 'prevKurikoshi',
-    kurikoshiBeforeJiko: 'kurikoshiBeforeJiko',
-    jiko: 'jiko',
-    kurikoshi: 'kurikoshi',
+    openingCarryoverDays: 'openingCarryoverDays',
     grantedOverride: 'grantedOverride',
     grantedOverrideReason: 'grantedOverrideReason',
     grantedOverrideBy: 'grantedOverrideBy',
@@ -8787,18 +8511,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason: 'totalUsedAdjustmentReason',
     totalUsedAdjustmentBy: 'totalUsedAdjustmentBy',
     totalUsedAdjustmentAt: 'totalUsedAdjustmentAt',
-    month01: 'month01',
-    month02: 'month02',
-    month03: 'month03',
-    month04: 'month04',
-    month05: 'month05',
-    month06: 'month06',
-    month07: 'month07',
-    month08: 'month08',
-    month09: 'month09',
-    month10: 'month10',
-    month11: 'month11',
-    month12: 'month12',
     created_at: 'created_at',
     updated_at: 'updated_at',
     created_by: 'created_by',
@@ -9360,11 +9072,7 @@ export namespace Prisma {
     grantedOrigin?: FloatFilter<"AnnualYukyu"> | number
     granted?: FloatFilter<"AnnualYukyu"> | number
     totalUsed?: FloatFilter<"AnnualYukyu"> | number
-    prevPrevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
-    prevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
-    kurikoshiBeforeJiko?: FloatFilter<"AnnualYukyu"> | number
-    jiko?: FloatFilter<"AnnualYukyu"> | number
-    kurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    openingCarryoverDays?: FloatNullableFilter<"AnnualYukyu"> | number | null
     grantedOverride?: FloatNullableFilter<"AnnualYukyu"> | number | null
     grantedOverrideReason?: StringNullableFilter<"AnnualYukyu"> | string | null
     grantedOverrideBy?: StringNullableFilter<"AnnualYukyu"> | string | null
@@ -9373,18 +9081,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: StringNullableFilter<"AnnualYukyu"> | string | null
     totalUsedAdjustmentBy?: StringNullableFilter<"AnnualYukyu"> | string | null
     totalUsedAdjustmentAt?: DateTimeNullableFilter<"AnnualYukyu"> | Date | string | null
-    month01?: FloatFilter<"AnnualYukyu"> | number
-    month02?: FloatFilter<"AnnualYukyu"> | number
-    month03?: FloatFilter<"AnnualYukyu"> | number
-    month04?: FloatFilter<"AnnualYukyu"> | number
-    month05?: FloatFilter<"AnnualYukyu"> | number
-    month06?: FloatFilter<"AnnualYukyu"> | number
-    month07?: FloatFilter<"AnnualYukyu"> | number
-    month08?: FloatFilter<"AnnualYukyu"> | number
-    month09?: FloatFilter<"AnnualYukyu"> | number
-    month10?: FloatFilter<"AnnualYukyu"> | number
-    month11?: FloatFilter<"AnnualYukyu"> | number
-    month12?: FloatFilter<"AnnualYukyu"> | number
     created_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
     updated_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
     created_by?: StringNullableFilter<"AnnualYukyu"> | string | null
@@ -9400,11 +9096,7 @@ export namespace Prisma {
     grantedOrigin?: SortOrder
     granted?: SortOrder
     totalUsed?: SortOrder
-    prevPrevKurikoshi?: SortOrder
-    prevKurikoshi?: SortOrder
-    kurikoshiBeforeJiko?: SortOrder
-    jiko?: SortOrder
-    kurikoshi?: SortOrder
+    openingCarryoverDays?: SortOrderInput | SortOrder
     grantedOverride?: SortOrderInput | SortOrder
     grantedOverrideReason?: SortOrderInput | SortOrder
     grantedOverrideBy?: SortOrderInput | SortOrder
@@ -9413,18 +9105,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: SortOrderInput | SortOrder
     totalUsedAdjustmentBy?: SortOrderInput | SortOrder
     totalUsedAdjustmentAt?: SortOrderInput | SortOrder
-    month01?: SortOrder
-    month02?: SortOrder
-    month03?: SortOrder
-    month04?: SortOrder
-    month05?: SortOrder
-    month06?: SortOrder
-    month07?: SortOrder
-    month08?: SortOrder
-    month09?: SortOrder
-    month10?: SortOrder
-    month11?: SortOrder
-    month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     created_by?: SortOrderInput | SortOrder
@@ -9444,11 +9124,7 @@ export namespace Prisma {
     grantedOrigin?: FloatFilter<"AnnualYukyu"> | number
     granted?: FloatFilter<"AnnualYukyu"> | number
     totalUsed?: FloatFilter<"AnnualYukyu"> | number
-    prevPrevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
-    prevKurikoshi?: FloatFilter<"AnnualYukyu"> | number
-    kurikoshiBeforeJiko?: FloatFilter<"AnnualYukyu"> | number
-    jiko?: FloatFilter<"AnnualYukyu"> | number
-    kurikoshi?: FloatFilter<"AnnualYukyu"> | number
+    openingCarryoverDays?: FloatNullableFilter<"AnnualYukyu"> | number | null
     grantedOverride?: FloatNullableFilter<"AnnualYukyu"> | number | null
     grantedOverrideReason?: StringNullableFilter<"AnnualYukyu"> | string | null
     grantedOverrideBy?: StringNullableFilter<"AnnualYukyu"> | string | null
@@ -9457,18 +9133,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: StringNullableFilter<"AnnualYukyu"> | string | null
     totalUsedAdjustmentBy?: StringNullableFilter<"AnnualYukyu"> | string | null
     totalUsedAdjustmentAt?: DateTimeNullableFilter<"AnnualYukyu"> | Date | string | null
-    month01?: FloatFilter<"AnnualYukyu"> | number
-    month02?: FloatFilter<"AnnualYukyu"> | number
-    month03?: FloatFilter<"AnnualYukyu"> | number
-    month04?: FloatFilter<"AnnualYukyu"> | number
-    month05?: FloatFilter<"AnnualYukyu"> | number
-    month06?: FloatFilter<"AnnualYukyu"> | number
-    month07?: FloatFilter<"AnnualYukyu"> | number
-    month08?: FloatFilter<"AnnualYukyu"> | number
-    month09?: FloatFilter<"AnnualYukyu"> | number
-    month10?: FloatFilter<"AnnualYukyu"> | number
-    month11?: FloatFilter<"AnnualYukyu"> | number
-    month12?: FloatFilter<"AnnualYukyu"> | number
     created_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
     updated_at?: DateTimeFilter<"AnnualYukyu"> | Date | string
     created_by?: StringNullableFilter<"AnnualYukyu"> | string | null
@@ -9484,11 +9148,7 @@ export namespace Prisma {
     grantedOrigin?: SortOrder
     granted?: SortOrder
     totalUsed?: SortOrder
-    prevPrevKurikoshi?: SortOrder
-    prevKurikoshi?: SortOrder
-    kurikoshiBeforeJiko?: SortOrder
-    jiko?: SortOrder
-    kurikoshi?: SortOrder
+    openingCarryoverDays?: SortOrderInput | SortOrder
     grantedOverride?: SortOrderInput | SortOrder
     grantedOverrideReason?: SortOrderInput | SortOrder
     grantedOverrideBy?: SortOrderInput | SortOrder
@@ -9497,18 +9157,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: SortOrderInput | SortOrder
     totalUsedAdjustmentBy?: SortOrderInput | SortOrder
     totalUsedAdjustmentAt?: SortOrderInput | SortOrder
-    month01?: SortOrder
-    month02?: SortOrder
-    month03?: SortOrder
-    month04?: SortOrder
-    month05?: SortOrder
-    month06?: SortOrder
-    month07?: SortOrder
-    month08?: SortOrder
-    month09?: SortOrder
-    month10?: SortOrder
-    month11?: SortOrder
-    month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     created_by?: SortOrderInput | SortOrder
@@ -9532,11 +9180,7 @@ export namespace Prisma {
     grantedOrigin?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     granted?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     totalUsed?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    prevPrevKurikoshi?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    prevKurikoshi?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    kurikoshiBeforeJiko?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    jiko?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    kurikoshi?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
+    openingCarryoverDays?: FloatNullableWithAggregatesFilter<"AnnualYukyu"> | number | null
     grantedOverride?: FloatNullableWithAggregatesFilter<"AnnualYukyu"> | number | null
     grantedOverrideReason?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
     grantedOverrideBy?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
@@ -9545,18 +9189,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
     totalUsedAdjustmentBy?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
     totalUsedAdjustmentAt?: DateTimeNullableWithAggregatesFilter<"AnnualYukyu"> | Date | string | null
-    month01?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month02?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month03?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month04?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month05?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month06?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month07?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month08?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month09?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month10?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month11?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
-    month12?: FloatWithAggregatesFilter<"AnnualYukyu"> | number
     created_at?: DateTimeWithAggregatesFilter<"AnnualYukyu"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"AnnualYukyu"> | Date | string
     created_by?: StringNullableWithAggregatesFilter<"AnnualYukyu"> | string | null
@@ -10062,11 +9694,7 @@ export namespace Prisma {
     grantedOrigin: number
     granted: number
     totalUsed?: number
-    prevPrevKurikoshi?: number
-    prevKurikoshi?: number
-    kurikoshiBeforeJiko: number
-    jiko: number
-    kurikoshi: number
+    openingCarryoverDays?: number | null
     grantedOverride?: number | null
     grantedOverrideReason?: string | null
     grantedOverrideBy?: string | null
@@ -10075,18 +9703,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: string | null
     totalUsedAdjustmentBy?: string | null
     totalUsedAdjustmentAt?: Date | string | null
-    month01?: number
-    month02?: number
-    month03?: number
-    month04?: number
-    month05?: number
-    month06?: number
-    month07?: number
-    month08?: number
-    month09?: number
-    month10?: number
-    month11?: number
-    month12?: number
     created_at?: Date | string
     updated_at?: Date | string
     created_by?: string | null
@@ -10102,11 +9718,7 @@ export namespace Prisma {
     grantedOrigin: number
     granted: number
     totalUsed?: number
-    prevPrevKurikoshi?: number
-    prevKurikoshi?: number
-    kurikoshiBeforeJiko: number
-    jiko: number
-    kurikoshi: number
+    openingCarryoverDays?: number | null
     grantedOverride?: number | null
     grantedOverrideReason?: string | null
     grantedOverrideBy?: string | null
@@ -10115,18 +9727,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: string | null
     totalUsedAdjustmentBy?: string | null
     totalUsedAdjustmentAt?: Date | string | null
-    month01?: number
-    month02?: number
-    month03?: number
-    month04?: number
-    month05?: number
-    month06?: number
-    month07?: number
-    month08?: number
-    month09?: number
-    month10?: number
-    month11?: number
-    month12?: number
     created_at?: Date | string
     updated_at?: Date | string
     created_by?: string | null
@@ -10142,11 +9742,7 @@ export namespace Prisma {
     grantedOrigin?: FloatFieldUpdateOperationsInput | number
     granted?: FloatFieldUpdateOperationsInput | number
     totalUsed?: FloatFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
-    jiko?: FloatFieldUpdateOperationsInput | number
-    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    openingCarryoverDays?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
     grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10155,18 +9751,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    month01?: FloatFieldUpdateOperationsInput | number
-    month02?: FloatFieldUpdateOperationsInput | number
-    month03?: FloatFieldUpdateOperationsInput | number
-    month04?: FloatFieldUpdateOperationsInput | number
-    month05?: FloatFieldUpdateOperationsInput | number
-    month06?: FloatFieldUpdateOperationsInput | number
-    month07?: FloatFieldUpdateOperationsInput | number
-    month08?: FloatFieldUpdateOperationsInput | number
-    month09?: FloatFieldUpdateOperationsInput | number
-    month10?: FloatFieldUpdateOperationsInput | number
-    month11?: FloatFieldUpdateOperationsInput | number
-    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10182,11 +9766,7 @@ export namespace Prisma {
     grantedOrigin?: FloatFieldUpdateOperationsInput | number
     granted?: FloatFieldUpdateOperationsInput | number
     totalUsed?: FloatFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
-    jiko?: FloatFieldUpdateOperationsInput | number
-    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    openingCarryoverDays?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
     grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10195,18 +9775,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    month01?: FloatFieldUpdateOperationsInput | number
-    month02?: FloatFieldUpdateOperationsInput | number
-    month03?: FloatFieldUpdateOperationsInput | number
-    month04?: FloatFieldUpdateOperationsInput | number
-    month05?: FloatFieldUpdateOperationsInput | number
-    month06?: FloatFieldUpdateOperationsInput | number
-    month07?: FloatFieldUpdateOperationsInput | number
-    month08?: FloatFieldUpdateOperationsInput | number
-    month09?: FloatFieldUpdateOperationsInput | number
-    month10?: FloatFieldUpdateOperationsInput | number
-    month11?: FloatFieldUpdateOperationsInput | number
-    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10222,11 +9790,7 @@ export namespace Prisma {
     grantedOrigin: number
     granted: number
     totalUsed?: number
-    prevPrevKurikoshi?: number
-    prevKurikoshi?: number
-    kurikoshiBeforeJiko: number
-    jiko: number
-    kurikoshi: number
+    openingCarryoverDays?: number | null
     grantedOverride?: number | null
     grantedOverrideReason?: string | null
     grantedOverrideBy?: string | null
@@ -10235,18 +9799,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: string | null
     totalUsedAdjustmentBy?: string | null
     totalUsedAdjustmentAt?: Date | string | null
-    month01?: number
-    month02?: number
-    month03?: number
-    month04?: number
-    month05?: number
-    month06?: number
-    month07?: number
-    month08?: number
-    month09?: number
-    month10?: number
-    month11?: number
-    month12?: number
     created_at?: Date | string
     updated_at?: Date | string
     created_by?: string | null
@@ -10262,11 +9814,7 @@ export namespace Prisma {
     grantedOrigin?: FloatFieldUpdateOperationsInput | number
     granted?: FloatFieldUpdateOperationsInput | number
     totalUsed?: FloatFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
-    jiko?: FloatFieldUpdateOperationsInput | number
-    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    openingCarryoverDays?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
     grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10275,18 +9823,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    month01?: FloatFieldUpdateOperationsInput | number
-    month02?: FloatFieldUpdateOperationsInput | number
-    month03?: FloatFieldUpdateOperationsInput | number
-    month04?: FloatFieldUpdateOperationsInput | number
-    month05?: FloatFieldUpdateOperationsInput | number
-    month06?: FloatFieldUpdateOperationsInput | number
-    month07?: FloatFieldUpdateOperationsInput | number
-    month08?: FloatFieldUpdateOperationsInput | number
-    month09?: FloatFieldUpdateOperationsInput | number
-    month10?: FloatFieldUpdateOperationsInput | number
-    month11?: FloatFieldUpdateOperationsInput | number
-    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10302,11 +9838,7 @@ export namespace Prisma {
     grantedOrigin?: FloatFieldUpdateOperationsInput | number
     granted?: FloatFieldUpdateOperationsInput | number
     totalUsed?: FloatFieldUpdateOperationsInput | number
-    prevPrevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    prevKurikoshi?: FloatFieldUpdateOperationsInput | number
-    kurikoshiBeforeJiko?: FloatFieldUpdateOperationsInput | number
-    jiko?: FloatFieldUpdateOperationsInput | number
-    kurikoshi?: FloatFieldUpdateOperationsInput | number
+    openingCarryoverDays?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverride?: NullableFloatFieldUpdateOperationsInput | number | null
     grantedOverrideReason?: NullableStringFieldUpdateOperationsInput | string | null
     grantedOverrideBy?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10315,18 +9847,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentBy?: NullableStringFieldUpdateOperationsInput | string | null
     totalUsedAdjustmentAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    month01?: FloatFieldUpdateOperationsInput | number
-    month02?: FloatFieldUpdateOperationsInput | number
-    month03?: FloatFieldUpdateOperationsInput | number
-    month04?: FloatFieldUpdateOperationsInput | number
-    month05?: FloatFieldUpdateOperationsInput | number
-    month06?: FloatFieldUpdateOperationsInput | number
-    month07?: FloatFieldUpdateOperationsInput | number
-    month08?: FloatFieldUpdateOperationsInput | number
-    month09?: FloatFieldUpdateOperationsInput | number
-    month10?: FloatFieldUpdateOperationsInput | number
-    month11?: FloatFieldUpdateOperationsInput | number
-    month12?: FloatFieldUpdateOperationsInput | number
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10805,11 +10325,7 @@ export namespace Prisma {
     grantedOrigin?: SortOrder
     granted?: SortOrder
     totalUsed?: SortOrder
-    prevPrevKurikoshi?: SortOrder
-    prevKurikoshi?: SortOrder
-    kurikoshiBeforeJiko?: SortOrder
-    jiko?: SortOrder
-    kurikoshi?: SortOrder
+    openingCarryoverDays?: SortOrder
     grantedOverride?: SortOrder
     grantedOverrideReason?: SortOrder
     grantedOverrideBy?: SortOrder
@@ -10818,18 +10334,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: SortOrder
     totalUsedAdjustmentBy?: SortOrder
     totalUsedAdjustmentAt?: SortOrder
-    month01?: SortOrder
-    month02?: SortOrder
-    month03?: SortOrder
-    month04?: SortOrder
-    month05?: SortOrder
-    month06?: SortOrder
-    month07?: SortOrder
-    month08?: SortOrder
-    month09?: SortOrder
-    month10?: SortOrder
-    month11?: SortOrder
-    month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     created_by?: SortOrder
@@ -10841,25 +10345,9 @@ export namespace Prisma {
     grantedOrigin?: SortOrder
     granted?: SortOrder
     totalUsed?: SortOrder
-    prevPrevKurikoshi?: SortOrder
-    prevKurikoshi?: SortOrder
-    kurikoshiBeforeJiko?: SortOrder
-    jiko?: SortOrder
-    kurikoshi?: SortOrder
+    openingCarryoverDays?: SortOrder
     grantedOverride?: SortOrder
     totalUsedAdjustment?: SortOrder
-    month01?: SortOrder
-    month02?: SortOrder
-    month03?: SortOrder
-    month04?: SortOrder
-    month05?: SortOrder
-    month06?: SortOrder
-    month07?: SortOrder
-    month08?: SortOrder
-    month09?: SortOrder
-    month10?: SortOrder
-    month11?: SortOrder
-    month12?: SortOrder
   }
 
   export type AnnualYukyuMaxOrderByAggregateInput = {
@@ -10871,11 +10359,7 @@ export namespace Prisma {
     grantedOrigin?: SortOrder
     granted?: SortOrder
     totalUsed?: SortOrder
-    prevPrevKurikoshi?: SortOrder
-    prevKurikoshi?: SortOrder
-    kurikoshiBeforeJiko?: SortOrder
-    jiko?: SortOrder
-    kurikoshi?: SortOrder
+    openingCarryoverDays?: SortOrder
     grantedOverride?: SortOrder
     grantedOverrideReason?: SortOrder
     grantedOverrideBy?: SortOrder
@@ -10884,18 +10368,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: SortOrder
     totalUsedAdjustmentBy?: SortOrder
     totalUsedAdjustmentAt?: SortOrder
-    month01?: SortOrder
-    month02?: SortOrder
-    month03?: SortOrder
-    month04?: SortOrder
-    month05?: SortOrder
-    month06?: SortOrder
-    month07?: SortOrder
-    month08?: SortOrder
-    month09?: SortOrder
-    month10?: SortOrder
-    month11?: SortOrder
-    month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     created_by?: SortOrder
@@ -10911,11 +10383,7 @@ export namespace Prisma {
     grantedOrigin?: SortOrder
     granted?: SortOrder
     totalUsed?: SortOrder
-    prevPrevKurikoshi?: SortOrder
-    prevKurikoshi?: SortOrder
-    kurikoshiBeforeJiko?: SortOrder
-    jiko?: SortOrder
-    kurikoshi?: SortOrder
+    openingCarryoverDays?: SortOrder
     grantedOverride?: SortOrder
     grantedOverrideReason?: SortOrder
     grantedOverrideBy?: SortOrder
@@ -10924,18 +10392,6 @@ export namespace Prisma {
     totalUsedAdjustmentReason?: SortOrder
     totalUsedAdjustmentBy?: SortOrder
     totalUsedAdjustmentAt?: SortOrder
-    month01?: SortOrder
-    month02?: SortOrder
-    month03?: SortOrder
-    month04?: SortOrder
-    month05?: SortOrder
-    month06?: SortOrder
-    month07?: SortOrder
-    month08?: SortOrder
-    month09?: SortOrder
-    month10?: SortOrder
-    month11?: SortOrder
-    month12?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     created_by?: SortOrder
@@ -10947,25 +10403,9 @@ export namespace Prisma {
     grantedOrigin?: SortOrder
     granted?: SortOrder
     totalUsed?: SortOrder
-    prevPrevKurikoshi?: SortOrder
-    prevKurikoshi?: SortOrder
-    kurikoshiBeforeJiko?: SortOrder
-    jiko?: SortOrder
-    kurikoshi?: SortOrder
+    openingCarryoverDays?: SortOrder
     grantedOverride?: SortOrder
     totalUsedAdjustment?: SortOrder
-    month01?: SortOrder
-    month02?: SortOrder
-    month03?: SortOrder
-    month04?: SortOrder
-    month05?: SortOrder
-    month06?: SortOrder
-    month07?: SortOrder
-    month08?: SortOrder
-    month09?: SortOrder
-    month10?: SortOrder
-    month11?: SortOrder
-    month12?: SortOrder
   }
 
   export type FloatWithAggregatesFilter<$PrismaModel = never> = {
