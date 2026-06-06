@@ -1435,6 +1435,7 @@ export namespace Prisma {
     file_id: string | null
     is_admin: boolean | null
     is_kintai_target: boolean | null
+    is_manager_supervisor: boolean | null
     is_removed: boolean | null
     created_at: Date | null
     updated_at: Date | null
@@ -1452,6 +1453,7 @@ export namespace Prisma {
     file_id: string | null
     is_admin: boolean | null
     is_kintai_target: boolean | null
+    is_manager_supervisor: boolean | null
     is_removed: boolean | null
     created_at: Date | null
     updated_at: Date | null
@@ -1469,6 +1471,7 @@ export namespace Prisma {
     file_id: number
     is_admin: number
     is_kintai_target: number
+    is_manager_supervisor: number
     is_removed: number
     created_at: number
     updated_at: number
@@ -1498,6 +1501,7 @@ export namespace Prisma {
     file_id?: true
     is_admin?: true
     is_kintai_target?: true
+    is_manager_supervisor?: true
     is_removed?: true
     created_at?: true
     updated_at?: true
@@ -1515,6 +1519,7 @@ export namespace Prisma {
     file_id?: true
     is_admin?: true
     is_kintai_target?: true
+    is_manager_supervisor?: true
     is_removed?: true
     created_at?: true
     updated_at?: true
@@ -1532,6 +1537,7 @@ export namespace Prisma {
     file_id?: true
     is_admin?: true
     is_kintai_target?: true
+    is_manager_supervisor?: true
     is_removed?: true
     created_at?: true
     updated_at?: true
@@ -1636,6 +1642,7 @@ export namespace Prisma {
     file_id: string | null
     is_admin: boolean
     is_kintai_target: boolean
+    is_manager_supervisor: boolean
     is_removed: boolean
     created_at: Date
     updated_at: Date
@@ -1672,6 +1679,7 @@ export namespace Prisma {
     file_id?: boolean
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1693,6 +1701,7 @@ export namespace Prisma {
     file_id?: boolean
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1710,6 +1719,7 @@ export namespace Prisma {
     file_id?: boolean
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1727,6 +1737,7 @@ export namespace Prisma {
     file_id?: boolean
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: boolean
     updated_at?: boolean
@@ -1734,7 +1745,7 @@ export namespace Prisma {
     updated_by?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "name" | "userNo" | "enter_date" | "quit_date" | "work_day_per_week" | "file_id" | "is_admin" | "is_kintai_target" | "is_removed" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"email" | "name" | "userNo" | "enter_date" | "quit_date" | "work_day_per_week" | "file_id" | "is_admin" | "is_kintai_target" | "is_manager_supervisor" | "is_removed" | "created_at" | "updated_at" | "created_by" | "updated_by", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     managers?: boolean | User$managersArgs<ExtArgs>
     subordinates?: boolean | User$subordinatesArgs<ExtArgs>
@@ -1761,6 +1772,7 @@ export namespace Prisma {
       file_id: string | null
       is_admin: boolean
       is_kintai_target: boolean
+      is_manager_supervisor: boolean
       is_removed: boolean
       created_at: Date
       updated_at: Date
@@ -2201,6 +2213,7 @@ export namespace Prisma {
     readonly file_id: FieldRef<"User", 'String'>
     readonly is_admin: FieldRef<"User", 'Boolean'>
     readonly is_kintai_target: FieldRef<"User", 'Boolean'>
+    readonly is_manager_supervisor: FieldRef<"User", 'Boolean'>
     readonly is_removed: FieldRef<"User", 'Boolean'>
     readonly created_at: FieldRef<"User", 'DateTime'>
     readonly updated_at: FieldRef<"User", 'DateTime'>
@@ -8419,6 +8432,7 @@ export namespace Prisma {
     file_id: 'file_id',
     is_admin: 'is_admin',
     is_kintai_target: 'is_kintai_target',
+    is_manager_supervisor: 'is_manager_supervisor',
     is_removed: 'is_removed',
     created_at: 'created_at',
     updated_at: 'updated_at',
@@ -8642,6 +8656,7 @@ export namespace Prisma {
     file_id?: StringNullableFilter<"User"> | string | null
     is_admin?: BoolFilter<"User"> | boolean
     is_kintai_target?: BoolFilter<"User"> | boolean
+    is_manager_supervisor?: BoolFilter<"User"> | boolean
     is_removed?: BoolFilter<"User"> | boolean
     created_at?: DateTimeFilter<"User"> | Date | string
     updated_at?: DateTimeFilter<"User"> | Date | string
@@ -8662,6 +8677,7 @@ export namespace Prisma {
     file_id?: SortOrderInput | SortOrder
     is_admin?: SortOrder
     is_kintai_target?: SortOrder
+    is_manager_supervisor?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -8685,6 +8701,7 @@ export namespace Prisma {
     file_id?: StringNullableFilter<"User"> | string | null
     is_admin?: BoolFilter<"User"> | boolean
     is_kintai_target?: BoolFilter<"User"> | boolean
+    is_manager_supervisor?: BoolFilter<"User"> | boolean
     is_removed?: BoolFilter<"User"> | boolean
     created_at?: DateTimeFilter<"User"> | Date | string
     updated_at?: DateTimeFilter<"User"> | Date | string
@@ -8705,6 +8722,7 @@ export namespace Prisma {
     file_id?: SortOrderInput | SortOrder
     is_admin?: SortOrder
     is_kintai_target?: SortOrder
+    is_manager_supervisor?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -8730,6 +8748,7 @@ export namespace Prisma {
     file_id?: StringNullableWithAggregatesFilter<"User"> | string | null
     is_admin?: BoolWithAggregatesFilter<"User"> | boolean
     is_kintai_target?: BoolWithAggregatesFilter<"User"> | boolean
+    is_manager_supervisor?: BoolWithAggregatesFilter<"User"> | boolean
     is_removed?: BoolWithAggregatesFilter<"User"> | boolean
     created_at?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -9205,6 +9224,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -9225,6 +9245,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -9244,6 +9265,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9264,6 +9286,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9284,6 +9307,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -9300,6 +9324,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9317,6 +9342,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9945,6 +9971,7 @@ export namespace Prisma {
     file_id?: SortOrder
     is_admin?: SortOrder
     is_kintai_target?: SortOrder
+    is_manager_supervisor?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -9967,6 +9994,7 @@ export namespace Prisma {
     file_id?: SortOrder
     is_admin?: SortOrder
     is_kintai_target?: SortOrder
+    is_manager_supervisor?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -9984,6 +10012,7 @@ export namespace Prisma {
     file_id?: SortOrder
     is_admin?: SortOrder
     is_kintai_target?: SortOrder
+    is_manager_supervisor?: SortOrder
     is_removed?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
@@ -11097,6 +11126,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -11116,6 +11146,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -11140,6 +11171,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -11159,6 +11191,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -11193,6 +11226,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11212,6 +11246,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11241,6 +11276,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11260,6 +11296,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11279,6 +11316,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -11298,6 +11336,7 @@ export namespace Prisma {
     file_id?: string | null
     is_admin?: boolean
     is_kintai_target?: boolean
+    is_manager_supervisor?: boolean
     is_removed?: boolean
     created_at?: Date | string
     updated_at?: Date | string
@@ -11332,6 +11371,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11351,6 +11391,7 @@ export namespace Prisma {
     file_id?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     is_kintai_target?: BoolFieldUpdateOperationsInput | boolean
+    is_manager_supervisor?: BoolFieldUpdateOperationsInput | boolean
     is_removed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
