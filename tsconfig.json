@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist",
-    "skipLibCheck": true
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": false,
+    "moduleDetection": "force",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
   },
   "include": ["types/**/*"]
 }

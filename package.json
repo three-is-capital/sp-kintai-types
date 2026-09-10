@@ -1,15 +1,14 @@
 {
   "name": "sp-kintai-types",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "main": "types/index.d.ts",
   "files": [
     "types"
   ],
   "scripts": {
-    "copy": "copy.bat",
-    "build": "tsc --declaration --emitDeclarationOnly"
+    "check": "tsc --noEmit -p tsconfig.json"
   },
   "devDependencies": {
-    "@prisma/client": "^6.4.1"
+    "typescript": "^5.9.3"
   }
 }
