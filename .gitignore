@@ -1,0 +1,3 @@
+# 依存はコミットしない（本リポジトリには .gitignore が無く、v0.2.0 の作業で
+# node_modules を誤ってコミットした。sp-kintai-api#210 / chatgpt-gas#453）
+node_modules/
