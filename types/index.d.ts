@@ -272,3 +272,38 @@ export interface AnnualYukyu {
   /** 更新者 */
   updated_by: string | null;
 }
+
+/**
+ * 子の看護等休暇の対象判定に使う子の情報（#252）。氏名は持たない（目的は年齢判定のみ）。
+ * 家族情報は機微情報なので User には列を足さず別テーブルに置く。登録・変更・削除は管理者のみ。
+ */
+export interface UserChild {
+  id: number;
+  email: string;
+  /** 生年月日：yyyy-mm-dd 形式 */
+  birthDate: string;
+  /** 「第1子」など識別用の任意ラベル */
+  memo: string | null;
+  /** 作成日 */
+  created_at: string;
+  /** 更新日 */
+  updated_at: string;
+  /** 作成者 */
+  created_by: string | null;
+  /** 更新者 */
+  updated_by: string | null;
+}
+
+/** 介護休暇の対象家族の人数（現在値のみ。履歴は持たない / #252） */
+export interface UserCareFamily {
+  email: string;
+  targetFamilyCount: number;
+  /** 作成日 */
+  created_at: string;
+  /** 更新日 */
+  updated_at: string;
+  /** 作成者 */
+  created_by: string | null;
+  /** 更新者 */
+  updated_by: string | null;
+}
