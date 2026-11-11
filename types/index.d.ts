@@ -51,7 +51,15 @@ export type HolidayType =
   /** 裁判員等休暇 (第 23 条) */
   | 'Saibanin'
   /** 業務上災害療養 (第 43 条 / 労災) */
-  | 'Ryouyou';
+  | 'Ryouyou'
+  /**
+   * 半日区分（#251）。有給（YukyuDay / YukyuHalf）と同じく「1 日 / 半日」を enum の値で分ける。
+   * 半日 = 3 時間 45 分（第 17 条 4 項）= 0.5 日。時間単位の取得は #138 で別途検討する
+   * 子の看護等休暇（半日）
+   */
+  | 'KoNoKangoHalf'
+  /** 介護休暇（半日） */
+  | 'KaigoHalf';
 
 /** 社員マスタ */
 export interface User {
