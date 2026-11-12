@@ -223,8 +223,6 @@ export interface AnnualYukyu {
   grantedOrigin: number;
   /** 有給付与（調整後） */
   granted: number;
-  /** 有給取得合計（Kintai 由来の raw 値。台帳の調整キャップ計算で参照） */
-  totalUsed: number;
   /**
    * 台帳開始時点（最小 ki>=11 行）の開繰越シード = ki<=10 から期11 へ繰り越された確定残（日）。
    * KINTAI_SYSTEM_STARTED 前の消化は Kintai に存在せず再計算不能なため、Excel 移行値由来の確定値を保持する（#124）。
@@ -248,9 +246,8 @@ export interface AnnualYukyu {
   grantedOverrideAt: string | null;
   /**
    * 有給使用日数の手動調整 (fiscal-year-change-2026 Phase 3-2 拡張)。
-   * null なら totalUsed をそのまま消化日数として扱う。設定されている場合は台帳 (YukyuLedgerService) が
-   * 残高計算で effectiveTotalUsed = totalUsed - totalUsedAdjustment に上限キャップする
-   * （totalUsed カラムは Kintai 由来の raw 値を維持）。
+   * null なら Kintai の消化をそのまま使う。設定されている場合は台帳 (YukyuLedgerService) が残高計算で、
+   * その期の消化合計（Kintai から求める / #162）から本値を差し引いた日数を上限に引き当てる。
    * 想定用途: 過去 Kintai データが本人の登録ミス等で過剰計上されており、HR 側で人事的に
    * 相殺調整した日数を「使用扱いしない」と確定したケース (例: 平内 11 期 16 日)。
    */
