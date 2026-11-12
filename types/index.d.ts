@@ -73,8 +73,6 @@ export interface User {
   quit_date: string | null;
   /** 週に働く日数 */
   work_day_per_week: number;
-  /** ユーザの入力用スプレッドシートのファイルID: 元のシステムにあったもの。 */
-  file_id: string | null;
   /** 管理者（上長がいない場合のデフォルトの上長） */
   is_admin: boolean;
   /**
