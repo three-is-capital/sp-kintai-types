@@ -91,8 +91,6 @@ export interface User {
    * 割増計算ロジックは下流（gap-analysis 項目 10 / #80）で社労士確認のうえ実装する。現状は消費側なし。
    */
   is_manager_supervisor: boolean;
-  /** 削除フラグ */
-  is_removed: boolean;
   /** 作成日 */
   created_at: string;
   /** 更新日 */
